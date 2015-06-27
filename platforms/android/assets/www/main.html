@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Xuan Thuy Birds</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="css/pageSlider.css">
+		<link rel="stylesheet" type="text/css" href="css/mainStyle.css">
+		<link rel="stylesheet" href="css/swiper.css" />
+		<script>
+		var CC4 = 'CC BY-SA 3.0';
+		var CC3 = 'CC BY-SA 3.0';
+		var CC25 = 'CC BY-SA 2.5';
+		var CC2 = 'CC BY-SA 2.0';
+		var CC1 = 'CC BY-SA 1.0';
+		var arr = 'All Rights Reserved';
+		
+			if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+				var msViewportStyle = document.createElement("style");
+				msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));
+				document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+			}
+		</script>
+		<script src="cordova.js"></script>
+		<script src="js/lib/jquery.js"></script>
+		<script src="js/lib/birdDetail.js"></script>
+		<script src="js/lib/birdDetailindexSort.js"></script>
+		<script>
+			var birdListScroll;
+			var lang = true;
+			var menuChoosen = 0;
+			// 1 == name, 2 == Season
+			var birdNameChange = birdInformationName;
+			var birdInformationABC = birdInformation;
+			var wAPP = $(window).width();
+			var hAPP = $(window).height();
+			console.log(wAPP, hAPP);
+			var device;
+			var allDonwloaded;
+			if (localStorage.getItem("isAllDownloaded") != null) {
+				allDonwloaded = localStorage.getItem("isAllDownloaded");
+			} else {
+				allDonwloaded = "notDownloaded";
+			}
+			console.log(allDonwloaded);
+		</script>
+		<script src="js/lib/pageslider.js"></script>
+		<script src="js/lib/iscroll-zoom.js"></script>
+		<script src="js/lib/hammer.js"></script>
+	</head>
+
+	<body onload="init()">
+		<div id="templateShower"></div>
+		<div id="fixedShow">
+			<div class="searchPositionFixed">
+				<div class="line">
+					<input id="searchInput" class="searchInputStyle" />
+				</div>
+			</div>
+			<div id="navBarSeasonShow">
+				<div class="lineBt2"></div>
+				<div id="navBarMonth">
+					<p id="navBarMonthText">
+						DECEMBER
+					</p>
+				</div>
+				<a><div id="navBarArrowBack"></div></a>
+				<a><div id="navBarArrowNext"></div></a>
+			</div>
+			<a href="#">
+			<button class="aboutPageBack">
+				BACK
+			</button></a>
+			<div id="navBarShower">
+				<div class="navBar navBar-change">
+					<div class="hideScroll">
+						<div class="lineBt"></div>
+						<div id="navContainer">
+
+							<button id="backButton">
+								<a id="backButtonHref" href="#">BACK</a>
+							</button>
+
+							<button id="searchButton" class="searchButton">
+
+							</button>
+							<button id="langb" class="languageButton">
+								VIET
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--
+		<div id="downWrapID">
+			<div id="centerProgress">
+				<div id="centerProgressChild">
+					<div id ="downProgess" class="downloadWindow">
+						<h2 id="downHeader" style="font-size: 2em">DOWNLOADING BIRD PICTURES PLEASE WAIT...</h2>
+
+						<div id="progressBar">
+							<div id="progressContainer">
+								<div id="progress-bar" style="background:url(images/pageElements/loading.png);"></div>
+								<div id="progressBox"></div>
+								<p id="progressTEXT">
+									0%
+								</p>
+							</div>
+						</div>
+						<p id="downInfo">
+							MAKE SURE YOUR WIFI IS ON, THE CONTENT IS AROUND 60MB.
+						</p>
+
+					</div>
+				</div>
+			</div>
+			<button id="downStop"class="downDemAllStop" onclick="downDemAlll()">
+				STOP
+			</button>
+			<button id="downLang"class="downLangChange" onclick="downLang()">
+				VIET
+			</button>
+		</div>
+		-->
+		<script id="birdSeasonMenuTemplate" type="template">
+			<div id="sPContainer">
+			<div id="sPCenter">
+			<div class="sPline1 sPline"></div>
+			<div id="sPSpring" onclick="springMenu()" class="sPImgContainer"><img src="images/pageElements/SPRING.jpg" class="sPImg"  /><div class="textWrapper"><h2 id="springImgText" class="seasonMenuTextCenter">SPRING</h2></div></div>
+			<div id="sPSummer" onclick="summerMenu()" class="sPImgContainer sPmargin"><img src="images/pageElements/SUMMER.jpg" class="sPImg" /><h2 id="summerImgText" class="seasonMenuTextCenter">SUMMER</h2></div>
+			<div id="sPAutumn" onclick="autumnMenu()" class="sPImgContainer"><img src="images/pageElements/AUTUMN.jpg" class="sPImg" /><h2 id="autumnImgText" class="seasonMenuTextCenter">AUTUMN</h2></div>
+			<div id="sPWinter" onclick="winterMenu()" class="sPImgContainer sPmargin"><img src="images/pageElements/WINTER.jpg" class="sPImg" /><h2 id="winterImgText" class="seasonMenuTextCenter">WINTER</h2></div>
+			<div class="sPSelect">
+			<div class="sPmontContainer">
+			<p class="sPmonth" onclick="monthALL()">
+			<a id="sPmonth1" href="#seasonMonth">
+			ALL
+			</a>
+			</p>
+			</div>
+			<div class="sPmontContainer">
+			<p class="sPmonth" onclick="month1()">
+			<a id="sPmonth2" href="#seasonMonth">
+			ALL
+			</a>
+			</p>
+			</div>
+			<div class="sPmontContainer">
+			<p  class="sPmonth" onclick="month2()">
+			<a id="sPmonth3" href="#seasonMonth">
+			ALL
+			</a>
+			</p>
+			</div>
+			<div class="sPmontContainer sPnoLine">
+			<p class="sPmonth" onclick="month3()">
+			<a id="sPmonth4" href="#seasonMonth">
+			ALL
+			</a>
+			</p>
+			</div>
+			</div>
+			<div class="sPline2 sPline"></div>
+			</div>
+			</div>
+		</script>
+		<script id="birdDetailGalleryTemplate" type="template">
+			<div id="detailedPageGalleryWarp">
+			<!-- Slider main container -->
+			<div class="swiper-container zoom-gallery">
+			<!-- Additional required wrapper -->
+			<div id="imgZoomGallery" class="swiper-wrapper">
+			<!-- Slides -->
+			</div>
+			</div>
+			<div id="DpCopyWrap" class="fontSw">
+			<div id="DpPhotoCopyRight">©james Tony</div>
+			</div>
+			<div class="swiper-container zoom-galleryBottom">
+			<!-- Additional required wrapper -->
+			<div id="imgThumbGallery" class="swiper-wrapper">
+			<!-- Slides -->
+			</div>
+			</div>
+			</div>
+		</script>
+		<script id="birdDetailTemplate" type="template">
+			<div id="detailedPageWarp" style="overflow-y: scroll">
+			<div id="detailedHeight">
+			<div id="dPTopMargin"></div>
+			<!-- Slider main container -->
+			<a href="#detailedPageGallery">
+			<div class="swiper-container dPSwiperContainer">
+			<!-- Additional required wrapper -->
+			<div id="birdDetailGallery" class="swiper-wrapper">
+			<!-- Slides -->
+			</div>
+			<!-- If we need pagination -->
+			<div class="swiper-pagination"></div>
+			</div>
+			</a>
+			<div id="copyWrap" class="fontSw">
+			<div id="photoCopyRight">©james Tony</div>
+			</div>
+			<div id="dPTitel">
+			<p>
+			{{birdTitel}}
+			</p>
+			</div>
+			<div id="dPTextBox">
+			<div id="dPDescription" class="dPHeader">
+			{{Description}}
+			</div>
+			<p id="dPDescriptionText" class="dPText fontSw">
+			{{DescriptionText}}
+			</p>
+			<div id="dPHabitat" class="dPHeader">
+			{{Habitat}}
+			</div>
+			<p id="dPHabitatText" class="dPText fontSw">
+			{{HabitatText}}
+			</p>
+			<div id="dPObservation" class="dPHeader">
+			{{Observation}}
+			</div>
+			<p id="dPObservationText" class="dPText fontSw">
+			{{ObservationText}}
+			</p>
+			<div id="dPConservation" class="dPHeader">
+			{{Conversation}}
+			</div>
+			<p id="dPConservationText" class="dPText fontSw">
+			{{ConversationText}}
+			</p>
+			<div id="dPFooter"></div>
+			</div>
+			</div>
+			</div>
+		</script>
+		<script id="birdWindowTemplate" type="template">
+			<div id="birdListWarp">
+			<div class="birdWindowStyle">
+			<ul class="birdWindow">
+
+			</ul>
+			</div>
+			</div>
+		</script>
+		<script id="birdWindowTemplateAppend" type="template">
+			<li>
+			<a href="#detailedPage">
+			<div class="birdBox" data-id="{{birdID}}"  onclick="grabID(this)">
+			<img class="birdImg" src="{{birdImgPath}}"/>
+			<div class="birdTitel"><p id="{{birdID}}">{{birdTitel}}</p></div>
+			</div>
+			</a>
+			</li>
+		</script>
+		<script id="aboutTemplate" type="template">
+			<div id="aboutWarp" class="aboutWarp">
+			<div class="aboutPage">
+			<h1>Xuan Thuy
+			<br>
+			Bird Guide</h1>
+			<div class="lineAbout"></div>
+			<h2>Xuan Thuy</h2>
+			<div class="lineAbout2"></div>
+			<p>
+			This is a project created by two volunteers (Robert Mildenberger and Niklas Schäfer) of the Xuan Thuy Nationalpark in 2015.
+			<br />
+			<br />
+			We haven't and we won't profit from this project in terms of money, because it's a part of our voluntary service here in the Nationalpark.
+			<br />
+			<br />
+			All the informations about the birds were taken from the original "Xuan Thuy Nationalpark bird guide"-book in agreement with the authorities for the book.
+			<br />
+			<br />
+			<br />
+			All the pictures were taken from the World Wide Web and we don't own any rights.
+			<br />
+			<br />
+			If you are the original owner/creator of any of those pictures used for this Application and you want it to be deleted, please contact us. We will delete it immediately.
+			Thank you and have a good time using this Application!
+			</p>
+			<h2>Design</h2>
+			<div class="lineAbout2"></div>
+			<p>
+			Robert Mildenberger and Niklas Schaefer
+			</p>
+			<h2>Contact</h2>
+			<div class="lineAbout2"></div>
+			<p id="mail">
+			mildenberger.robert@<br>googlemail.com
+			</p>
+			<p id="copyRight">
+			use it as you want.
+			</p>
+			<button id="downReset" class="downResetAbout" onclick="downReset()">
+			IMAGES
+			</button>
+			</div>
+			</div>
+		</script>
+		<script id="mainPageTemplate" type="template">
+			<div id="mPWrap" class="mPWarp">
+			<div id="mPTitel">
+			<h1 id="mPTitelText">BIRD GUIDE</h1>
+			</div>
+			<div id="mPNavButtonC">
+			<a href="#seasonMenu">
+			<button id="mPNavButtonSeas" class="topMargin">
+			<p id="mainPageSeason" class="verticalCenter">
+			SEASON
+			</p>
+			</button></a>
+			<a href="#name">
+			<button id="mPNavButtonName" class="topMargin">
+			<p id="mainPageName" class="verticalCenter">
+			NAME
+			</p>
+			</button></a>
+			</div>
+			<img id="backgroundBirdImg" src="images/pageElements/Vogel-Startseite.png" onclick="birdSpinn1()" />
+			<a href="#about">
+			<div id="aboutToggle">
+			<p id="aboutText">
+			ABOUT
+			</p>
+			</div></a>
+			<a>
+			<div id="mPLangChange">
+			<p id="mPLang">
+			VIET
+			</p>
+			</div></a>
+			</div>
+		</script>
+		<script src="js/app/app.js"></script>
+		<script src="js/lib/SwiperXL.js"></script>
+		<script src="js/app/seasonMenu.js"></script>
+		<script>
+			// true == Englisch false == Viet
+			var galleryTop;
+			var myScroll;
+
+			function loaded(imageID, bildID) {
+				console.log(imageID);
+				console.log(bildID);
+				var hammertime = Hammer(document.getElementById(imageID), {
+				});
+				hammertime.get('pinch').set({
+					enable : true
+				});
+				var rect = document.getElementById(bildID);
+				var posX = 0,
+				    posY = 0,
+				    scale = 1,
+				    last_scale = 1,
+				    last_posX = 0,
+				    last_posY = 0,
+				    max_pos_x =
+				    wAPP,
+				    max_pos_y =
+				    wAPP;
+
+				hammertime.on('pan tap panend doubletap pinch pinchend', function(ev) {
+					switch(ev.type) {
+					case 'pinch':
+						console.log("PINCHE");
+						scale = Math.max(0.5, Math.min(last_scale * (ev.scale), 4));
+						console.log(ev.scale);
+						console.log(scale);
+						break;
+					case 'pinchend':
+						console.log("pinchend!");
+						if (scale <= 1) {
+							scale = 1;
+						}
+						last_scale = scale;
+						break;
+					case 'pan':
+						if (scale != 1) {
+							posX = last_posX + ev.deltaX;
+							posY = last_posY + ev.deltaY;
+							if (posX > max_pos_x) {
+								posX = max_pos_x;
+							}
+							if (posX < -max_pos_x) {
+								posX = -max_pos_x;
+							}
+							if (posY > max_pos_y) {
+								posY = max_pos_y;
+							}
+							if (posY < -max_pos_y) {
+								posY = -max_pos_y;
+							}
+						} else {
+							posX = 0;
+							posY = 0;
+							saved_posX = 0;
+							saved_posY = 0;
+						}
+						break;
+					case 'panend':
+						last_posX = posX < max_pos_x ? posX : max_pos_x;
+						last_posY = posY < max_pos_y ? posY : max_pos_y;
+						break;
+
+					case 'doubletap':
+						if (scale == 1) {
+							scale = 2;
+							posX = 0;
+							posY = 0;
+						} else {
+							scale = 1;
+						}
+					}
+					var trans = "translate3d(0, 0, 0) scale(1)";
+
+					if (scale != 1) {
+						trans = "translate3d(" + posX + "px," + posY + "px, 0) scale(" + scale + ")";
+					}
+					rect.style.transform = trans;
+
+					if (scale == 1) {
+						$('#imgZoomGallery').removeClass('swiper-no-swiping');
+					} else {
+						$('#imgZoomGallery').addClass('swiper-no-swiping');
+					}
+				});
+			}
+
+			function loaded1() {
+				birdListScroll = new IScroll('#birdListWarp', {
+					scrollbars : true,
+					click : true,
+					interactiveScrollbars : true,
+					scrollbars : 'custom',
+					resizeScrollbars : false
+				});
+				setTimeout(scrollToBird, 1);
+				setTimeout(function() {
+					if (birdListScroll != null) {
+						birdListScroll.refresh();
+					}
+				}, 300);
+				setTimeout(function() {
+					if (birdListScroll != null) {
+						birdListScroll.refresh();
+					}
+				}, 500);
+				setTimeout(function() {
+					if (birdListScroll != null) {
+						birdListScroll.refresh();
+					}
+				}, 750);
+				setTimeout(function() {
+					if (birdListScroll != null) {
+						birdListScroll.refresh();
+					}
+				}, 2000);
+			}
+
+
+			document.addEventListener('touchmove', preventDefault, false);
+			function preventDefault(e) {
+				e.preventDefault();
+			};
+
+		</script>
+		<script src="js/app/donwloadDemAll.js"></script>
+	</body>
+</html>

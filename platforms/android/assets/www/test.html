@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Xuan Thuy Birds</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="css/pageSlider.css">
+		<link rel="stylesheet" type="text/css" href="css/mainStyle.css">
+		<link rel="stylesheet" href="css/swiper.css" />
+		<script>
+			if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+				var msViewportStyle = document.createElement("style");
+				msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));
+				document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+			}
+		</script>
+		<!-- <script src="cordova.js"></script> -->
+		<script src="js/lib/jquery.js"></script>
+		<script src="js/lib/birdDetail.js"></script>
+		<script src="js/lib/birdDetailindexSort.js"></script>
+		<script>
+			var lang = true;
+			var menuChoosen = 0;
+			// 1 == name, 2 == Season
+			var birdNameChange = birdInformationName;
+			var birdInformationABC = birdInformation;
+			var wAPP = $(window).width();
+			var hAPP = $(window).height();
+			var device;
+		</script>
+		<script src="js/lib/pageslider.js"></script>
+		<script src="js/lib/iscroll-zoom.js"></script>
+		<script src="js/lib/hammer.js"></script>
+	</head>
+
+	<body>
+		<div id="templateShower">
+			<div class="mPWarp">
+				<div id="mPTitel">
+					<h1 id="mPTitelText">BIRD GUIDE</h1>
+				</div>
+				<div id="mPNavButtonC">
+					<a href="#seasonMenu">
+					<button id="mPNavButtonSeas" class="topMargin">
+						<p id="mainPageSeason" class="verticalCenter">
+							SEASON
+						</p>
+					</button></a>
+					<a href="#name">
+					<button id="mPNavButtonName" class="topMargin">
+						<p id="mainPageName" class="verticalCenter">
+							NAME
+						</p>
+					</button></a>
+				</div>
+				<img id="backgroundBirdImg" src="images/pageElements/Vogel-Startseite.png" onclick="birdSpinn1()" />
+				<a href="#about">
+				<div id="aboutToggle">
+					<p id="aboutText">
+						ABOUT
+					</p>
+				</div></a>
+				<a>
+				<div id="mPLangChange">
+					<p id="mPLang">
+						VIET
+					</p>
+				</div></a>
+			</div>
+		</div>
+		<script>
+			var a = 1;
+			console.log(birdInformation[0].birdCopyRight[1]);
+		</script>
+		<script src="js/app/app.js"></script>
+	</body>
+</html>

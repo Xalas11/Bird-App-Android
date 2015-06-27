@@ -1,0 +1,1786 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	text-decoration: none;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+	color: #FFFFFF;
+}
+button {
+	margin: 0;
+	border: none;
+	font: inherit;
+	line-height: normal;
+	color: #FFFFFF;
+	outline: 0;
+	-webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+	-webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+	-webkit-tap-highlight-color: rgba(0,0,0,0); /* prevent tap highlight color / shadow */
+	-webkit-user-select: none;
+	overflow: hidden;
+}
+input {
+	margin: 0;
+	padding: 0;
+	padding-left: 2%;
+	padding-right: 2%;
+	border: none;
+	font: inherit;
+	line-height: normal;
+	font-size: 1.2em;
+}
+.alert-box {
+	color: #555;
+	border-radius: 10px;
+	font-family: Tahoma, Geneva, Arial, sans-serif;
+	font-size: 11px;
+	padding: 10px 10px 10px 36px;
+	margin: 10px;
+}
+
+@font-face {
+	font-family: 'neouthin';
+	src: url('../fonts/neou-thin-webfont.eot');
+	src: url('../fonts/neou-thin-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/neou-thin-webfont.woff') format('woff'), url('../fonts/neou-thin-webfont.ttf') format('truetype'), url('../fonts/neou-thin-webfont.svg#neouthin') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Start of Page CSS */
+
+body {
+	background: #323131;
+	font-family: 'neouthin', Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+	color: white;
+	-webkit-overflow-scrolling: touch;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	-webkit-tap-highlight-color: transparent;
+}
+
+body, html {
+	-ms-overflow-style: none !important;
+}
+@viewport{height:device-height}
+@viewport{width:device-width}
+@-ms-viewport{height:device-height}
+@-ms-viewport{width:device-width}
+/* copyRight */
+.fontSw {
+	font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+}
+.aligRight {
+	color: rgba(219, 219, 219, 1);
+}
+#copyWrap {
+	text-align: center;
+	font-size: 0.8em;
+}
+#photoCopyRight {
+	margin-top: 2%;
+}
+#DpCopyWrap {
+	text-align: center;
+	font-size: 0.8em;
+}
+#DpPhotoCopyRight {
+	margin-top: 2%;
+}
+/* copyRight */
+
+/*::-webkit-scrollbar{
+ width: 30px;
+ }
+
+ ::-webkit-scrollbar-track{
+ }
+ ::-webkit-scrollbar-thumb{
+ height: 50px;
+ background: #555555;
+ }
+
+ ::-webkit-scrollbar-track-piece {
+ }*/
+
+/* Styled scrollbars */
+.iScrollVerticalScrollbar {
+	position: absolute;
+	z-index: 9999;
+	width: 30px;
+	height: 79%;
+	bottom: 2px;
+	top: 3%;
+	right: 2px;
+	overflow: hidden;
+}
+
+.iScrollVerticalScrollbar.iScrollBothScrollbars {
+	bottom: 100px;
+}
+
+.iScrollIndicator {
+	position: absolute;
+	background: #555555;
+	border-left: 18px solid rgba(249, 0, 0, 0);
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+.iScrollVerticalScrollbar .iScrollIndicator {
+	width: 100%;
+	height: 30px;
+}
+
+/* end */
+/* Downloader */
+.downResetAbout {
+	float: right;
+	-webkit-backface-visibility: hidden;
+	z-index: 51;
+	background: #555555;
+	margin-top: 10px;
+	padding: 5px 10px 5px 10px;
+	font-size: 1.8em;
+}
+/*#downWrap {
+ display: none;
+ }*/
+.downLangChange {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	-webkit-backface-visibility: hidden;
+	z-index: 51;
+	background: #555555;
+	margin-top: 10px;
+	width: 120px;
+	padding: 5px 10px 5px 10px;
+	font-size: 1.8em;
+}
+.downLangChange:active, .downDemAllStop:active, .downResetAbout:active {
+	background: #FFFFFF;
+	color: black;
+	border: black 1px solid;
+}
+/* stop and continue */
+.downDemAllStop {
+	-webkit-backface-visibility: hidden;
+	z-index: 51;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 120px;
+	margin-top: 10px;
+	background: #555555;
+	padding: 5px 10px 5px 10px;
+	font-size: 1.8em;
+}
+.downDemAllStop-change {
+	background: #6F253C;
+}
+.downDemAllStart-change {
+	background: #497463;
+}
+/* stop and continue */
+#progressContainer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+	left: 15%;
+	height: 90px;
+	border: 1px solid white;
+}
+#progress-bar {
+	width: 0%;
+	height: 86px;
+	margin: 2px;
+}
+#progressTEXT {
+	color: black;
+	text-align: left;
+	margin-top: -22px;
+	margin-left: 7px;
+}
+.downloadWindow {
+	text-align: center;
+}
+#centerProgress {
+	display: table;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background: #323131;
+}
+#centerProgressChild {
+	padding-bottom: 25%;
+	display: table-cell;
+	vertical-align: middle;
+}
+#downHeader, #downInfo {
+	font-size: 2em;
+	width: 90%;
+	margin-left: 5%;
+}
+#downHeader {
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+#downInfo {
+	margin-top: 5%;
+}
+/* Downloader */
+/* template box */
+#templateShower {
+	overflow: hidden;
+	position: absolute;
+	z-index: 0;
+	height: 100%;
+	width: 100%;
+}
+/* template box */
+
+/* Season CSS */
+#sPContainer {
+	display: table;
+	top: 0;
+	height: 93%;
+	width: 100%;
+}
+#sPCenter {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+.sPline {
+	height: 1px;
+	background: white;
+	width: 90%;
+	margin-left: 5%;
+}
+.sPline1 {
+	margin-bottom: 5%;
+}
+.sPline2 {
+	margin-top: 5%;
+}
+.sPImgContainer {
+	display: inline-block;
+	position: relative;
+	width: 40%;
+	text-align: center;
+	margin-bottom: 5%;
+	margin-top: 5%;
+}
+.sPImg {
+	border: 1px white solid;
+	max-width: 100%;
+}
+.seasonMenuTextCenter {
+	display: table;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	margin: auto;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	font-size: 1.8em;
+}
+.sPImg-change {
+	width: 60%;
+}
+.sPmargin {
+	margin-left: 5%;
+}
+.sPSelect {
+	display: none;
+	background: #6F253C;
+	margin-left: 20%;
+	margin-bottom: 10%;
+	border: 1px white solid;
+	width: 60%;
+	-webkit-transition: 0.25s;
+	transition: 0.25s;
+	-webkit-transform: translate3d(-200%, 0px, 0px) rotate(0deg);
+	transform: translate3d(-200%, 0px, 0px) rotate(0deg);
+}
+.sPSelect-change {
+	display: table;
+}
+.sPSelect-change-transit {
+	-webkit-transition: 0.25s;
+	transition: 0.25s;
+	-webkit-transform: translate3d(0%, 0px, 0px) rotate(0deg);
+	transform: translate3d(0%, 0px, 0px) rotate(0deg);
+}
+.sPmonth {
+	display: table-cell;
+	height: 25px;
+	vertical-align: middle;
+	font-size: 1.8em;
+}
+.sPmontContainer {
+	display: table;
+	height: 25%;
+	width: 80%;
+	border-bottom: 1px white solid;
+	text-align: center;
+	margin-left: 10%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+}
+.sPnoLine {
+	border-bottom: none;
+}
+
+/* Season CSS */
+
+/* Start of About Page CSS*/
+.aboutPage {
+	z-index: 50;
+	height: 100%;
+	width: 100%;
+	overflow-y: scroll;
+}
+.lineAbout, .lineAbout2 {
+	width: 90%;
+	margin-left: 5%;
+	margin-bottom: 50px;
+	height: 1px;
+	border-top: 1px white solid;
+}
+.lineAbout2 {
+	margin-left: 3%;
+}
+.aboutPage h1 {
+	margin-top: 5%;
+	margin-bottom: 5%;
+	font-size: 4.5em;
+	text-align: center;
+}
+.aboutPage h2 {
+	margin-top: 5%;
+	margin-left: 3%;
+	margin-bottom: 0px;
+	font-size: 3em;
+}
+.aboutPage p {
+	margin-top: 2%;
+	margin-left: 3%;
+	margin-right: 3%;
+	font-size: 1.8em;
+}
+#copyRight {
+	margin-top: 5%;
+	bottom: 0;
+	right: 0;
+	font-size: 1.5em;
+}
+.aboutPageBack {
+	-webkit-backface-visibility: hidden;
+	z-index: 51;
+	display: none;
+	position: fixed;
+	bottom: 5px;
+	left: 10px;
+	width: 30%;
+	padding: 5px 5px 5px 5px;
+	background: #6f253c;
+	font-size: 1.8em;
+}
+.aboutPageBack:active {
+	background: #FFFFFF;
+	color: black;
+	border: black 1px solid;
+}
+.aboutPageBack-change {
+	display: block;
+}
+.aboutPadding {
+	padding-bottom: 70px;
+}
+
+/* End of About Page CSS */
+/* Start of Main Page CSS */
+.mPWarp {
+	-webkit-backface-visibility: hidden;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+}
+#mPTitel {
+	display: table;
+	border: 2px white solid;
+	width: 90%;
+	margin: 5%;
+	height: 240px;
+	text-align: center;
+	font-size: 8.5em;
+}
+#mPTitelText {
+	display: table-cell;
+	vertical-align: middle;
+}
+#mPNavButtonC {
+	margin-top: 17%;
+	margin-left: 15%;
+	font-size: 5em;
+}
+.topMargin {
+	margin-top: 7%;
+}
+.verticalCenter {
+	padding-left: 1%;
+	padding-right: 1%;
+	display: table-cell;
+	vertical-align: middle;
+}
+#mPNavButtonCate {
+	display: table;
+	border: 2px white solid;
+	height: 90px;
+	background: #c1974d;
+}
+#mPNavButtonCate:active {
+	border: 2px black solid;
+	background: #F6F6F6;
+	color: black;
+}
+#mPNavButtonSeas {
+	display: table;
+	border: 2px white solid;
+	height: 90px;
+	background: #6f253c;
+	-webkit-transition: 0.25s;
+	transition: 0.25s;
+}
+#mPNavButtonSeas:active {
+	border: 2px black solid;
+	background: #F6F6F6;
+	color: black;
+}
+.seasonColor {
+	background-color: #6f253c !important;
+}
+.nameColor {
+	background-color: #497463 !important;
+}
+.seasonColor:active, .nameColor:active {
+	background: #F6F6F6 !important;
+}
+
+#mPNavButtonName {
+	display: table;
+	border: 2px white solid;
+	height: 90px;
+	background: #497463;
+	-webkit-transition: 0.25s;
+	transition: 0.25s;
+}
+#mPNavButtonName:active {
+	border: 2px black solid;
+	background: #F6F6F6;
+	color: black;
+}
+#backgroundBirdImg {
+	z-index: -1;
+	position: absolute;
+	bottom: 0;
+	max-width: 100%;
+}
+#aboutToggle {
+	position: absolute;
+	bottom: 1%;
+	left: 3%;
+	font-size: 3.2em;
+}
+#aboutToggle:active {
+	color: black;
+}
+#mPLangChange {
+	position: absolute;
+	bottom: 1%;
+	right: 14%;
+	font-size: 3.2em;
+}
+#mPLangChange:active {
+	color: black;
+}
+/* End of Main Page CSS */
+
+/* Start of NavBar CSS */
+#fixedShow {
+	z-index: 100;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+}
+.navBar-change {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 58px;
+	bottom: 0px;
+	left: 0;
+}
+#navBarShower {
+}
+#navContainer {
+	display: inline-block;
+	bottom: 1%;
+	width: 100%;
+	padding-top: 6px;
+	height: 46px;
+	font-size: 1.8em;
+	text-align: center;
+}
+#searchButton {
+	width: 14%;
+	height: 100%;
+	background-size: 80%;
+}
+#searchButton:active {
+	background-size: 80%;
+}
+.searchButton {
+	background: url("../images/pageElements/Lupe.gif") no-repeat center;
+}
+.searchButton:active {
+	background: url("../images/pageElements/Lupe_schwarz.gif") no-repeat center;
+}
+.searchButton-change {
+	background: #323131;
+}
+.searchButton-change:active {
+	background: #323131;
+}
+#backButton, .languageButton {
+	float: left;
+	height: 100%;
+	width: 30%; /* For old syntax, otherwise collapses. */
+	background-color: #497463;
+	-webkit-transition: background-color 250ms linear;
+	transition: background-color 250ms linear;
+}
+.languageButton {
+	float: right;
+	margin-right: 3.5%;
+}
+#backButton {
+	float: left;
+	margin-left: 3.5%;
+}
+#backButton:active, .languageButton:active {
+	color: black;
+	background: #FFFFFF;
+	border: black 1px solid;
+}
+.languageButton-change {
+	background-color: gray;
+}
+#navBarSeasonShow {
+	display: none;
+	position: absolute;
+	bottom: 58px; /* as high as nav button box */
+	left: 0;
+	width: 100%;
+	height: 46px;
+	background: #323131;
+}
+#navBarArrowBack {
+	position: relative;
+	display: inline-block;
+	background: url("../images/pageElements/Pfeil 2.gif") no-repeat center;
+	height: 30px;
+	width: 10%;
+	margin-top: 8px;
+	margin-left: 7%;
+	background-size: 100%;
+}
+#navBarMonth {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+}
+#navBarMonthText {
+	font-size: 1.5em;
+	margin-top: 9px;
+}
+#navBarArrowNext {
+	position: relative;
+	display: inline-block;
+	background: url("../images/pageElements/Pfeil 2 - gespiegelt.gif") no-repeat center;
+	height: 30px;
+	width: 10%;
+	margin-top: 8px;
+	margin-left: 64%;
+	background-size: 100%;
+}
+.searchPositionFixed {
+	position: fixed;
+	top: 10px;
+	width: 100%;
+	height: 0px;
+}
+.searchPositionFixed-change {
+	height: 7%;
+}
+
+.line {
+	margin-left: 4%;
+	width: 92%;
+	height: 100%;
+	background: #FFFFFF;
+}
+.searchInputStyle {
+	font-size: 2em;
+	display: none;
+}
+.searchInputStyle-change {
+	display: block;
+	width: 96%;
+	height: 100%;
+}
+.hideScroll {
+	bottom: -1px;
+	width: 100%;
+	height: 100%;
+	background: #323131;
+}
+.lineBt {
+	margin-left: 5%;
+	width: 90%;
+	height: 1px;
+	background: #FFFFFF;
+}
+.lineBt2 {
+	margin-left: 5%;
+	width: 90%;
+	height: 1px;
+	background: #FFFFFF;
+}
+/* End of NavBar CSS */
+
+/* Start BirdWindo */
+.birdListWarp {
+	position: absolute;
+	width: 100%;
+	-ms-transform: translate(-100%, 0px) rotate(0deg);
+	-webkit-transform: translate3d(-100%, 0px,0px) rotate(0deg);
+	transform: translate3d(-100%, 0px, 0px) rotate(0deg);
+	-webkit-transition: 0.25s;
+	transition: 0.25s;
+}
+.birdListWarp-change {
+	-ms-transform: translate(0, 0px) rotate(0deg);
+	-webkit-transform: translate3d(0, 0px,0px) rotate(0deg);
+	transform: translate3d(0, 0px, 0px) rotate(0deg);
+}
+.birdWindowStyle {
+	position: absolute;
+	width: 95%;
+	margin-left: 5%;
+}
+.marginTop {
+	margin-top: 5%;
+}
+.marginTop-change {
+	margin-top: 20%;
+}
+.birdBox {
+	display: table;
+	width: 94.5%;
+	margin-bottom: 20px;
+	border: 1px white solid;
+}
+.birdImg, .birdTitel {
+	vertical-align: middle;
+}
+.birdTitel {
+	display: table-cell;
+	font-size: 1.2em;
+	width: 1090px;
+	text-align: center;
+}
+.birdImg {
+	display: inline;
+	width: 158px;
+	border-right: 1px white solid;
+}
+#birdWindowFooter {
+	height: 60px;
+	width: 100%;
+}
+.birdWindowFooter-change {
+	height: 120px;
+	width: 100%;
+}
+/* End BirdWindo */
+/* Start Bird Detail */
+/* Swiper css */
+.dPSwiperContainer {
+	height: 350px;
+}
+.swiper-slide {
+	text-align: center;
+}
+.dPImgZoom {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+.dPImg {
+	vertical-align: middle;
+	height: auto;
+	max-height: 348px;
+	max-width: 420px;
+	border: 1px solid white;
+}
+#dPTopMargin {
+	margin-top: 5%;
+}
+/* Swiper css */
+#dPTitel {
+	display: table;
+	width: 70%;
+	margin-top: 5%;
+	margin-left: 15%;
+	border: 1px white solid;
+	font-size: 2.8em;
+}
+#dPTitel p {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+#dPTextBox {
+	width: 85%;
+	margin-top: 10%;
+	margin-left: 7.5%;
+}
+.dPHeader {
+	font-size: 1.6em;
+	margin-bottom: 1%;
+}
+.dPText {
+	margin-bottom: 10%;
+}
+#dPFooter {
+	width: 100%;
+	height: 150px;
+}
+/* End Bird Detail */
+/* Start Bird Gallery */
+#detailedPageGalleryWarp {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+.zoom-gallery {
+	height: 65%;
+	width: 100%
+}
+.zoom-galleryBottom {
+	height: 20.6%;
+	box-sizing: border-box;
+	padding: 10px 0;
+}
+.zoom-galleryBottom .swiper-slide {
+	width: 35%;
+	height: 100%;
+}
+.dPImgZoom {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+.swiper-slide {
+	text-align: center;
+}
+.dpImgZoomImg {
+	vertical-align: middle;
+	height: auto;
+	max-height: 98%;
+	max-width: 98%;
+}
+.dpImgZoomImgThumb {
+	vertical-align: middle;
+	height: auto;
+	max-height: 98%;
+	max-width: 80%;
+}
+/* End Bird Gallery */
+/* MQ 1280px*/
+@media screen and (max-height: 1920px) {
+	/* Start of About Page CSS*/
+	.lineAbout {
+		margin-bottom: 50px;
+	}
+	.aboutPage h1 {
+		font-size: 4em;
+	}
+	.aboutPage h2 {
+		font-size: 3em;
+	}
+	.aboutPage p {
+		font-size: 1.4em;
+	}
+	#copyRight {
+		font-size: 1.4em;
+	}
+	.aboutPageBack {
+		font-size: 4em;
+	}
+	.aboutPadding {
+		padding-bottom: 90px;
+	}
+	/* End of About Page CSS */
+	/* Start of Main Page CSS */
+	#mPTitel {
+		height: 300px;
+		font-size: 9em;
+		border: 1px white solid;
+	}
+	#mPNavButtonC {
+		margin-top: 13%;
+		margin-left: 15%;
+		font-size: 5em;
+	}
+	#mPNavButtonSeas {
+		border: 1px white solid;
+		height: 90px;
+	}
+	#mPNavButtonSeas:active {
+		border: 1px black solid;
+	}
+	#mPNavButtonName {
+		border: 1px white solid;
+		height: 90px;
+	}
+	#mPNavButtonName:active {
+		border: 1px black solid;
+	}
+	#backgroundBirdImg {
+		margin-left: 0%;
+		max-width: 100%;
+	}
+	#aboutToggle {
+		font-size: 4em;
+	}
+	#mPLangChange {
+		font-size: 4em;
+		right: 10%;
+	}
+	/* End of Main Page CSS */
+	/* Start of NavBar CSS */
+	.navBar-change {
+		height: 110px;
+	}
+	#navContainer {
+		padding-top: 10px;
+		height: 90px;
+		font-size: 3.5em;
+	}
+	#navBarSeasonShow {
+		bottom: 110px; /* as high as nav button box */
+		height: 90px; /* button height */
+	}
+	#navBarArrowBack {
+		height: 55px;
+		margin-top: 17px;
+	}
+	#navBarMonthText {
+		font-size: 3.2em;
+		margin-top: 20px;
+	}
+	#navBarArrowNext {
+		height: 55px;
+		margin-top: 17px;
+	}
+	.searchInputStyle {
+		font-size: 3.2em;
+	}
+	/* End of NavBar CSS */
+	/* Start BirdWindo */
+	.birdBox {
+		margin-bottom: 20px;
+	}
+	.birdTitel {
+		font-size: 2em;
+	}
+	.birdImg {
+		width: 250px;
+	}
+	#birdWindowFooter {
+		height: 120px;
+	}
+	.birdWindowFooter-change {
+		height: 170px;
+	}
+	/* End BirdWindo */
+	/* Season CSS */
+	.seasonMenuTextCenter {
+		font-size: 4em;
+	}
+	.sPmonth {
+		height: 10px;
+		font-size: 4em;
+	}
+	.sPmontContainer {
+		margin-left: 10%;
+		margin-top: 14px;
+		margin-bottom: 10px;
+	}
+	.sPnoLine {
+		border-bottom: none;
+	}
+	/* Season CSS */
+	/* Start Bird Detail */
+	/* Swiper css */
+	.dPSwiperContainer {
+		height: 532px;
+		width: 100%;
+	}
+	.dPImg {
+		max-height: 530px;
+		max-width: 600px;
+	}
+	/* Swiper css */
+	#dPTitel {
+		font-size: 3.4em;
+	}
+	.dPHeader {
+		font-size: 2.2em;
+	}
+	#dPFooter {
+		height: 80px;
+	}
+}
+@media screen and (max-height: 1080px) {
+	/* Start of About Page CSS*/
+	.lineAbout {
+		margin-bottom: 50px;
+	}
+	.aboutPage h1 {
+		font-size: 4em;
+	}
+	.aboutPage h2 {
+		font-size: 3em;
+	}
+	.aboutPage p {
+		font-size: 1.4em;
+	}
+	#copyRight {
+		font-size: 1.4em;
+	}
+	.aboutPageBack {
+		font-size: 3.2em;
+	}
+	.aboutPadding {
+		padding-bottom: 90px;
+	}
+	/* End of About Page CSS */
+	/* Start of Main Page CSS */
+	#mPTitel {
+		height: 250px;
+		font-size: 7em;
+		border: 1px white solid;
+	}
+	#mPNavButtonC {
+		margin-top: 13%;
+		margin-left: 15%;
+		font-size: 4em;
+	}
+	#mPNavButtonSeas {
+		border: 1px white solid;
+		height: 75px;
+	}
+	#mPNavButtonSeas:active {
+		border: 1px black solid;
+	}
+	#mPNavButtonName {
+		border: 1px white solid;
+		height: 75px;
+	}
+	#mPNavButtonName:active {
+		border: 1px black solid;
+	}
+	#backgroundBirdImg {
+		margin-left: 0%;
+		max-width: 100%;
+	}
+	#aboutToggle {
+		font-size: 3em;
+	}
+	#mPLangChange {
+		font-size: 3em;
+		right: 10%;
+	}
+	/* End of Main Page CSS */
+	/* Start of NavBar CSS */
+	.navBar-change {
+		height: 86px;
+	}
+	#navContainer {
+		padding-top: 8px;
+		height: 70px;
+		font-size: 3em;
+	}
+	#navBarSeasonShow {
+		bottom: 86px; /* as high as nav button box */
+		height: 74px; /* button height */
+	}
+	#navBarArrowBack {
+		height: 46px;
+		margin-top: 14px;
+	}
+	#navBarMonthText {
+		font-size: 2.8em;
+		margin-top: 15px;
+	}
+	#navBarArrowNext {
+		height: 46px;
+		margin-top: 14px;
+	}
+	.searchInputStyle {
+		font-size: 3em;
+	}
+	/* End of NavBar CSS */
+	/* Start BirdWindo */
+	.birdBox {
+		margin-bottom: 20px;
+	}
+	.birdTitel {
+		font-size: 1.8em;
+	}
+	.birdImg {
+		width: 218px;
+	}
+	#birdWindowFooter {
+		height: 100px;
+	}
+	.birdWindowFooter-change {
+		height: 150px;
+	}
+	/* End BirdWindo */
+	/* Season CSS */
+	.seasonMenuTextCenter {
+		font-size: 3.2em;
+	}
+	.sPmonth {
+		height: 10px;
+		font-size: 3.2em;
+	}
+	.sPmontContainer {
+		margin-left: 10%;
+		margin-top: 7px;
+		margin-bottom: 5px;
+	}
+	.sPnoLine {
+		border-bottom: none;
+	}
+	/* Season CSS */
+	/* Start Bird Detail */
+	/* Swiper css */
+	.dPSwiperContainer {
+		height: 422px;
+		width: 100%;
+	}
+	.dPImg {
+		max-height: 420px;
+		max-width: 480px;
+	}
+	/* Swiper css */
+	#dPTitel {
+		font-size: 3.4em;
+	}
+	.dPHeader {
+		font-size: 2.2em;
+	}
+	#dPFooter {
+		height: 80px;
+	}
+}
+@media screen and (max-height: 768px) {
+	/* Start of About Page CSS*/
+	.lineAbout {
+		margin-bottom: 40px;
+	}
+	.aboutPage h1 {
+		font-size: 3.5em;
+	}
+	.aboutPage h2 {
+		font-size: 2.5em;
+	}
+	.aboutPage p {
+		font-size: 1.2em;
+	}
+	#copyRight {
+		font-size: 1.2em;
+	}
+	.aboutPageBack {
+		font-size: 2.2em;
+	}
+	.aboutPadding {
+		padding-bottom: 80px;
+	}
+	/* End of About Page CSS */
+	/* Start of Main Page CSS */
+	#mPTitel {
+		height: 200px;
+		font-size: 5em;
+		border: 1px white solid;
+	}
+	#mPNavButtonC {
+		margin-top: 13%;
+		margin-left: 15%;
+		font-size: 3em;
+	}
+	#mPNavButtonSeas {
+		border: 1px white solid;
+		height: 60px;
+	}
+	#mPNavButtonSeas:active {
+		border: 1px black solid;
+	}
+	#mPNavButtonName {
+		border: 1px white solid;
+		height: 60px;
+	}
+	#mPNavButtonName:active {
+		border: 1px black solid;
+	}
+	#backgroundBirdImg {
+		margin-left: 0%;
+		max-width: 100%;
+	}
+	#aboutToggle {
+		font-size: 2.4em;
+	}
+	#mPLangChange {
+		font-size: 2.4em;
+		right: 10%;
+	}
+	/* End of Main Page CSS */
+	/* Start of NavBar CSS */
+	#navContainer {
+		font-size: 2.2em;
+	}
+	.searchInputStyle {
+		font-size: 2.2em;
+	}
+	#navBarMonthText {
+		font-size: 2em;
+	}
+	/* End of NavBar CSS */
+	/* Start BirdWindo */
+	.birdBox {
+		margin-bottom: 15px;
+	}
+	.birdTitel {
+		font-size: 1.2em;
+	}
+	.birdImg {
+		width: 165px;
+	}
+	#birdWindowFooter {
+		height: 100px;
+	}
+	.birdWindowFooter-change {
+		height: 150px;
+	}
+	/* End BirdWindo */
+	/* Season CSS */
+	.seasonMenuTextCenter {
+		font-size: 2.2em;
+	}
+	.sPmonth {
+		height: 10px;
+		font-size: 2.2em;
+	}
+	.sPmontContainer {
+		margin-left: 10%;
+		margin-top: 7px;
+		margin-bottom: 5px;
+	}
+	.sPnoLine {
+		border-bottom: none;
+	}
+	/* Season CSS */
+	/* Start Bird Detail */
+	/* Swiper css */
+	.dPSwiperContainer {
+		height: 322px;
+		width: 100%;
+	}
+	.dPImg {
+		max-height: 320px;
+		max-width: 350px;
+	}
+	/* Swiper css */
+	#dPTitel {
+		font-size: 2.4em;
+	}
+	.dPHeader {
+		font-size: 1.8em;
+	}
+	#dPFooter {
+		height: 80px;
+	}
+}
+@media screen and (max-height: 680px) {
+	/* Start of About Page CSS*/
+	.lineAbout {
+		margin-bottom: 30px;
+		height: 1px;
+		border-top: 1px white solid;
+	}
+	.lineAbout2 {
+		border-top: 1px white solid;
+	}
+	.aboutPage h1 {
+		font-size: 3em;
+	}
+	.aboutPage h2 {
+		font-size: 2em;
+	}
+	.aboutPage p {
+		font-size: 1em;
+	}
+	#copyRight {
+		font-size: 1em;
+	}
+	.aboutPageBack {
+		font-size: 2em;
+	}
+	.aboutPadding {
+		padding-bottom: 70px;
+	}
+	/* End of About Page CSS */
+	/* Start of Main Page CSS */
+	#mPTitel {
+		height: 160px;
+		text-align: center;
+		font-size: 4.5em;
+		border: 1px white solid;
+	}
+	#mPNavButtonC {
+		font-size: 2.6em;
+	}
+	#mPNavButtonCate {
+		border: 1px white solid;
+		height: 50px;
+	}
+	#mPNavButtonCate:active {
+		border: 1px black solid;
+	}
+	#mPNavButtonSeas {
+		border: 1px white solid;
+		height: 50px;
+	}
+	#mPNavButtonSeas:active {
+		border: 1px black solid;
+	}
+	#mPNavButtonName {
+		border: 1px white solid;
+		height: 50px;
+	}
+	#mPNavButtonName:active {
+		border: 1px black solid;
+	}
+	#aboutToggle {
+		font-size: 2.2em;
+	}
+	#mPLangChange {
+		position: absolute;
+		bottom: 1%;
+		right: 10%;
+		font-size: 2.2em;
+	}
+	/* End of Main Page CSS */
+	/* Start of NavBar CSS */
+	.navBar-change {
+		height: 58px;
+	}
+	#navContainer {
+		padding-top: 6px;
+		height: 46px;
+		font-size: 2em;
+	}
+	#navBarSeasonShow {
+		bottom: 58px; /* as high as nav button box */
+		height: 46px;
+	}
+	#navBarArrowBack {
+		height: 30px;
+		margin-top: 8px;
+	}
+	#navBarMonthText {
+		font-size: 1.5em;
+		margin-top: 9px;
+	}
+	#navBarArrowNext {
+		height: 30px;
+		margin-top: 8px;
+	}
+	.searchInputStyle {
+		font-size: 2em;
+	}
+	/* End of NavBar CSS */
+	/* Start Bird Detail */
+	/* Swiper css */
+	.dPSwiperContainer {
+		height: 250px;
+		width: 100%;
+	}
+	.dPImg {
+		max-height: 248px;
+		max-width: 333px;
+	}
+	/* Swiper css */
+	#dPTitel {
+		margin-top: 8%;
+		font-size: 2.4em;
+	}
+	.dPHeader {
+		font-size: 1.4em;
+	}
+	.dPText {
+		margin-bottom: 13%;
+	}
+	#dPFooter {
+		height: 100px;
+	}
+	/* End Bird Detail */
+	/* Season CSS */
+	.seasonMenuTextCenter {
+		font-size: 2em;
+	}
+	.sPmonth {
+		font-size: 2em;
+	}
+	/* Season CSS */
+	/* Start Bird Gallery */
+	.zoom-gallery {
+		height: 65%;
+	}
+	.zoom-galleryBottom {
+		height: 20.6%;
+	}
+	.zoom-galleryBottom .swiper-slide {
+		width: 35%;
+		height: 100%;
+	}
+	.dPImgZoom {
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+	}
+	.swiper-slide {
+		text-align: center;
+	}
+	.dpImgZoomImg {
+		vertical-align: middle;
+		height: auto;
+		max-height: 98%;
+		max-width: 98%;
+	}
+	.dpImgZoomImgThumb {
+		vertical-align: middle;
+		height: auto;
+		max-height: 98%;
+		max-width: 80%;
+	}
+	/* End Bird Gallery */
+}
+
+@media screen and (max-height: 580px) {
+	/* Start BirdWindo */
+	.birdBox {
+		margin-bottom: 10px;
+	}
+	.birdTitel {
+		font-size: 1.1em;
+	}
+	.birdImg {
+		width: 132px;
+	}
+	#birdWindowFooter {
+		height: 60px;
+	}
+	.birdWindowFooter-change {
+		height: 100px;
+	}
+	/* End BirdWindo */
+	/* Season CSS */
+	.seasonMenuTextCenter {
+		font-size: 1.8em;
+	}
+	.sPmonth {
+		display: table-cell;
+		height: 25px;
+		vertical-align: middle;
+		font-size: 1.5em;
+	}
+	.sPmontContainer {
+		margin-bottom: 6px;
+	}
+	/* Season CSS */
+	/* Start Bird Detail */
+	/* Swiper css */
+	.dPSwiperContainer {
+		height: 222px;
+	}
+	.dPImg {
+		max-height: 220px;
+		max-width: 270px;
+	}
+	/* Swiper css */
+	#dPTitel {
+		font-size: 1.5em;
+	}
+	.dPHeader {
+		font-size: 1.3em;
+	}
+	#dPFooter {
+		height: 50px;
+	}
+	/* End Bird Detail */
+}
+
+@media screen and (max-height: 540px) {
+	/* Start of Main Page CSS */
+	#mPTitel {
+		height: 150px;
+		font-size: 4.2em;
+		border: 1px white solid;
+	}
+	#mPNavButtonC {
+		margin-top: 10%;
+		margin-left: 15%;
+		font-size: 2em;
+	}
+	#mPNavButtonSeas {
+		border: 1px white solid;
+		height: 46px;
+	}
+	#mPNavButtonSeas:active {
+		border: 1px black solid;
+	}
+	#mPNavButtonName {
+		border: 1px white solid;
+		height: 46px;
+	}
+	#mPNavButtonName:active {
+		border: 1px black solid;
+	}
+	#backgroundBirdImg {
+		margin-left: 5%;
+		max-width: 90%;
+	}
+	#aboutToggle {
+		font-size: 2em;
+	}
+	#mPLangChange {
+		font-size: 2em;
+	}
+	/* End of Main Page CSS */
+	/* Start of About Page CSS*/
+	.lineAbout, .lineAbout2 {
+		margin-bottom: 30px;
+	}
+	.aboutPage h1 {
+		font-size: 2.5em;
+	}
+	.aboutPage h2 {
+		font-size: 2em;
+	}
+	.aboutPage p {
+		font-size: 1em;
+	}
+	#copyRight {
+		font-size: 1em;
+	}
+	.aboutPageBack {
+		font-size: 1.5em;
+	}
+	.aboutPadding {
+		padding-bottom: 50px;
+	}
+	/* End of About Page CSS */
+	/* Start of NavBar CSS */
+	.navBar-change {
+		height: 50px;
+	}
+	#navContainer {
+		padding-top: 5px;
+		height: 40px;
+		font-size: 1.5em;
+	}
+	#navBarSeasonShow {
+		bottom: 50px; /* as high as nav button box */
+		height: 40px; /* button height */
+	}
+	#navBarArrowBack {
+		height: 24px;
+		margin-top: 8px;
+	}
+	#navBarMonthText {
+		font-size: 1.4em;
+		margin-top: 9px;
+	}
+	#navBarArrowNext {
+		height: 24px;
+		margin-top: 8px;
+	}
+	.searchInputStyle {
+		font-size: 1.5em;
+	}
+	/* End of NavBar CSS */
+	/* Start BirdWindo */
+	.birdBox {
+		margin-bottom: 10px;
+	}
+	.birdTitel {
+		font-size: 1.1em;
+	}
+	.birdImg {
+		width: 132px;
+	}
+	#birdWindowFooter {
+		height: 60px;
+	}
+	.birdWindowFooter-change {
+		height: 100px;
+	}
+	/* End BirdWindo */
+	/* Season CSS */
+	.seasonMenuTextCenter {
+		font-size: 1.5em;
+	}
+	.sPmonth {
+		height: 10px;
+		font-size: 1.5em;
+	}
+	.sPmontContainer {
+		margin-left: 10%;
+		margin-top: 7px;
+		margin-bottom: 5px;
+	}
+	.sPnoLine {
+		border-bottom: none;
+	}
+	/* Season CSS */
+	/* Start Bird Detail */
+	/* Swiper css */
+	.dPSwiperContainer {
+		height: 222px;
+	}
+	.dPImg {
+		max-height: 220px;
+		max-width: 270px;
+	}
+	/* Swiper css */
+	#dPTitel {
+		font-size: 1.5em;
+	}
+	.dPHeader {
+		font-size: 1.3em;
+	}
+	#dPFooter {
+		height: 50px;
+	}
+	/* End Bird Detail */
+}
+
+@media screen and (max-height: 330px) {
+	/* Start of Main Page CSS */
+	#mPTitel {
+		border: 1px white solid;
+		height: 90px;
+		font-size: 2.2em;
+	}
+	#mPNavButtonC {
+		margin-top: 10%;
+		margin-left: 13%;
+		font-size: 1.2em;
+	}
+	#mPNavButtonSeas {
+		border: 1px white solid;
+		height: 30px;
+	}
+	#mPNavButtonSeas:active {
+		border: 1px black solid;
+	}
+	#mPNavButtonName {
+		border: 1px white solid;
+		height: 30px;
+	}
+	#mPNavButtonName:active {
+		border: 1px black solid;
+	}
+	#backgroundBirdImg {
+		margin-left: 7.5%;
+		max-width: 85%;
+	}
+	#aboutToggle {
+		font-size: 1.2em;
+	}
+	#mPLangChange {
+		font-size: 1.2em;
+	}
+	/* End of Main Page CSS */
+	/* Start of About Page CSS*/
+	.lineAbout, .lineAbout2 {
+		margin-bottom: 20px;
+	}
+	.aboutPage h1 {
+		font-size: 1.5em;
+	}
+	.aboutPage h2 {
+		font-size: 1.2em;
+	}
+	.aboutPage p {
+		font-size: 0.8em;
+	}
+	#copyRight {
+		font-size: 0.8em;
+	}
+	.aboutPageBack {
+		font-size: 1em;
+	}
+	.aboutPadding {
+		padding-bottom: 50px;
+	}
+	/* End of About Page CSS */
+	/* Start of NavBar CSS */
+	.navBar-change {
+		height: 36px;
+	}
+	#navContainer {
+		padding-top: 5px;
+		height: 26px;
+		font-size: 1em;
+	}
+	#navBarSeasonShow {
+		bottom: 36px; /* as high as nav button box */
+		height: 26px; /* button height */
+	}
+	#navBarArrowBack {
+		height: 16px;
+		margin-top: 5px;
+	}
+	#navBarMonthText {
+		font-size: 0.8em;
+		margin-top: 7px;
+	}
+	#navBarArrowNext {
+		height: 16px;
+		margin-top: 5px;
+	}
+	.searchInputStyle {
+		font-size: 1em;
+	}
+	/* End of NavBar CSS */
+	/* Start BirdWindo */
+	.birdBox {
+		margin-bottom: 10px;
+	}
+	.birdTitel {
+		font-size: 0.8em;
+	}
+	.birdImg {
+		width: 95px;
+	}
+	#birdWindowFooter {
+		height: 40px;
+	}
+	.birdWindowFooter-change {
+		height: 80px;
+	}
+	/* End BirdWindo */
+	/* Season CSS */
+	.seasonMenuTextCenter {
+		font-size: 1em;
+	}
+	.sPmonth {
+		height: 10px;
+		font-size: 1em;
+	}
+	.sPmontContainer {
+		margin-left: 10%;
+		margin-top: 7px;
+		margin-bottom: 5px;
+	}
+	.sPnoLine {
+		border-bottom: none;
+	}
+	/* Season CSS */
+	/* Start Bird Detail */
+	/* Swiper css */
+	.dPSwiperContainer {
+		height: 162px;
+	}
+	.dPImg {
+		max-height: 160px;
+		max-width: 188px;
+	}
+	/* Swiper css */
+	#dPTitel {
+		font-size: 1.6em;
+	}
+	.dPHeader {
+		font-size: 1.2em;
+	}
+	.dPText {
+		font-size: 0.9em;
+	}
+	#dPFooter {
+		height: 50px;
+	}
+	/* End Bird Detail */
+}
+
+/*GIMIKS*/
+
+.birdSpin {
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	-webkit-transform: translate3d(0px, 0px, 0px) rotate(360deg);
+	transform: translate3d(0px, 0px, 0px) rotate(360deg);
+}
+.birdAway {
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	-webkit-transform: translate3d(0px, -300%, 0px) rotate(360deg);
+	transform: translate3d(0px, -300%, 0px) rotate(360deg);
+}

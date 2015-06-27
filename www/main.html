@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Xuan Thuy Birds</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="css/pageSlider.css">
+		<link rel="stylesheet" type="text/css" href="css/mainStyle.css">
+		<link rel="stylesheet" href="css/swiper.css" />
+		<script>
+			var CC4 = 'CC BY-SA 3.0';
+			var CC3 = 'CC BY-SA 3.0';
+			var CC25 = 'CC BY-SA 2.5';
+			var CC2 = 'CC BY-SA 2.0';
+			var CC1 = 'CC BY-SA 1.0';
+			var arr = 'All Rights Reserved';
+
+			if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+				var msViewportStyle = document.createElement("style");
+				msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));
+				document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+			}
+		</script>
+		<script src="cordova.js"></script>
+		<script src="js/lib/jquery.js"></script>
+		<script src="js/lib/birdDetail.js"></script>
+		<script src="js/lib/birdDetailindexSort.js"></script>
+		<script>
+			var birdListScroll;
+			var lang = true;
+			var menuChoosen = 0;
+			// 1 == name, 2 == Season
+			var birdNameChange = birdInformationName;
+			var birdInformationABC = birdInformation;
+			var wAPP = $(window).width();
+			var hAPP = $(window).height();
+			console.log(wAPP, hAPP);
+			var device;
+			var allDonwloaded;
+			if (localStorage.getItem("isAllDownloaded") != null) {
+				allDonwloaded = localStorage.getItem("isAllDownloaded");
+			} else {
+				allDonwloaded = "notDownloaded";
+			}
+			console.log(allDonwloaded);
+		</script>
+		<script src="js/lib/pageslider.js"></script>
+		<script src="js/lib/iscroll-zoom.js"></script>
+		<script src="js/lib/hammer.js"></script>
+	</head>
+
+	<body onload="init()">
+		<div id="templateShower"></div>
+		<div id="fixedShow">
+			<div class="searchPositionFixed">
+				<div class="line">
+					<input id="searchInput" class="searchInputStyle" />
+				</div>
+			</div>
+			<div id="navBarSeasonShow">
+				<div class="lineBt2"></div>
+				<div id="navBarMonth">
+					<p id="navBarMonthText">
+						DECEMBER
+					</p>
+				</div>
+				<a><div id="navBarArrowBack"></div></a>
+				<a><div id="navBarArrowNext"></div></a>
+			</div>
+			<a href="#">
+			<button class="aboutPageBack">
+				BACK
+			</button></a>
+			<div id="navBarShower">
+				<div class="navBar navBar-change">
+					<div class="hideScroll">
+						<div class="lineBt"></div>
+						<div id="navContainer">
+
+							<button id="backButton">
+								<a id="backButtonHref" href="#">BACK</a>
+							</button>
+
+							<button id="searchButton" class="searchButton">
+
+							</button>
+							<button id="langb" class="languageButton">
+								VIET
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--
+		<div id="downWrapID">
+		<div id="centerProgress">
+		<div id="centerProgressChild">
+		<div id ="downProgess" class="downloadWindow">
+		<h2 id="downHeader" style="font-size: 2em">DOWNLOADING BIRD PICTURES PLEASE WAIT...</h2>
+
+		<div id="progressBar">
+		<div id="progressContainer">
+		<div id="progress-bar" style="background:url(images/pageElements/loading.png);"></div>
+		<div id="progressBox"></div>
+		<p id="progressTEXT">
+		0%
+		</p>
+		</div>
+		</div>
+		<p id="downInfo">
+		MAKE SURE YOUR WIFI IS ON, THE CONTENT IS AROUND 60MB.
+		</p>
+
+		</div>
+		</div>
+		</div>
+		<button id="downStop"class="downDemAllStop" onclick="downDemAlll()">
+		STOP
+		</button>
+		<button id="downLang"class="downLangChange" onclick="downLang()">
+		VIET
+		</button>
+		</div>
+		-->
+		<script id="birdSeasonMenuTemplate" type="template">
+			<div id="sPContainer">
+			<div id="sPCenter">
+			<div class="sPline1 sPline"></div>
+			<div id="sPSpring" onclick="springMenu()" class="sPImgContainer"><img src="images/pageElements/SPRING.jpg" class="sPImg"  /><div class="textWrapper"><h2 id="springImgText" class="seasonMenuTextCenter">SPRING</h2></div></div>
+			<div id="sPSummer" onclick="summerMenu()" class="sPImgContainer sPmargin"><img src="images/pageElements/SUMMER.jpg" class="sPImg" /><h2 id="summerImgText" class="seasonMenuTextCenter">SUMMER</h2></div>
+			<div id="sPAutumn" onclick="autumnMenu()" class="sPImgContainer"><img src="images/pageElements/AUTUMN.jpg" class="sPImg" /><h2 id="autumnImgText" class="seasonMenuTextCenter">AUTUMN</h2></div>
+			<div id="sPWinter" onclick="winterMenu()" class="sPImgContainer sPmargin"><img src="images/pageElements/WINTER.jpg" class="sPImg" /><h2 id="winterImgText" class="seasonMenuTextCenter">WINTER</h2></div>
+			<div class="sPSelect">
+			<div class="sPmontContainer">
+			<p class="sPmonth" onclick="monthALL()">
+			<a id="sPmonth1" href="#seasonMonth">
+			ALL
+			</a>
+			</p>
+			</div>
+			<div class="sPmontContainer">
+			<p class="sPmonth" onclick="month1()">
+			<a id="sPmonth2" href="#seasonMonth">
+			ALL
+			</a>
+			</p>
+			</div>
+			<div class="sPmontContainer">
+			<p  class="sPmonth" onclick="month2()">
+			<a id="sPmonth3" href="#seasonMonth">
+			ALL
+			</a>
+			</p>
+			</div>
+			<div class="sPmontContainer sPnoLine">
+			<p class="sPmonth" onclick="month3()">
+			<a id="sPmonth4" href="#seasonMonth">
+			ALL
+			</a>
+			</p>
+			</div>
+			</div>
+			<div class="sPline2 sPline"></div>
+			</div>
+			</div>
+		</script>
+		<script id="birdDetailGalleryTemplate" type="template">
+			<div id="detailedPageGalleryWarp">
+			<!-- Slider main container -->
+			<div class="swiper-container zoom-gallery">
+			<!-- Additional required wrapper -->
+			<div id="imgZoomGallery" class="swiper-wrapper">
+			<!-- Slides -->
+			</div>
+			</div>
+			<div id="DpCopyWrap" class="fontSw">
+			<div id="DpPhotoCopyRight">©james Tony</div>
+			</div>
+			<div class="swiper-container zoom-galleryBottom">
+			<!-- Additional required wrapper -->
+			<div id="imgThumbGallery" class="swiper-wrapper">
+			<!-- Slides -->
+			</div>
+			</div>
+			</div>
+		</script>
+		<script id="birdDetailTemplate" type="template">
+			<div id="detailedPageWarp" style="overflow-y: scroll">
+			<div id="detailedHeight">
+			<div id="dPTopMargin"></div>
+			<!-- Slider main container -->
+			<a href="#detailedPageGallery">
+			<div class="swiper-container dPSwiperContainer">
+			<!-- Additional required wrapper -->
+			<div id="birdDetailGallery" class="swiper-wrapper">
+			<!-- Slides -->
+			</div>
+			<!-- If we need pagination -->
+			<div class="swiper-pagination"></div>
+			</div>
+			</a>
+			<div id="copyWrap" class="fontSw">
+			<div id="photoCopyRight">©james Tony</div>
+			</div>
+			<div id="dPTitel">
+			<p>
+			{{birdTitel}}
+			</p>
+			</div>
+			<div id="dPTextBox">
+			<div id="dPDescription" class="dPHeader">
+			{{Description}}
+			</div>
+			<p id="dPDescriptionText" class="dPText fontSw">
+			{{DescriptionText}}
+			</p>
+			<div id="dPHabitat" class="dPHeader">
+			{{Habitat}}
+			</div>
+			<p id="dPHabitatText" class="dPText fontSw">
+			{{HabitatText}}
+			</p>
+			<div id="dPObservation" class="dPHeader">
+			{{Observation}}
+			</div>
+			<p id="dPObservationText" class="dPText fontSw">
+			{{ObservationText}}
+			</p>
+			<div id="dPConservation" class="dPHeader">
+			{{Conversation}}
+			</div>
+			<p id="dPConservationText" class="dPText fontSw">
+			{{ConversationText}}
+			</p>
+			<div id="dPFooter"></div>
+			</div>
+			</div>
+			</div>
+		</script>
+		<script id="birdWindowTemplate" type="template">
+			<div id="birdListWarp">
+			<div class="birdWindowStyle">
+			<ul class="birdWindow">
+
+			</ul>
+			</div>
+			</div>
+		</script>
+		<script id="birdWindowTemplateAppend" type="template">
+			<li>
+			<a href="#detailedPage">
+			<div class="birdBox" data-id="{{birdID}}"  onclick="grabID(this)">
+			<img class="birdImg" src="{{birdImgPath}}"/>
+			<div class="birdTitel"><p id="{{birdID}}">{{birdTitel}}</p></div>
+			</div>
+			</a>
+			</li>
+		</script>
+		<script id="aboutTemplate" type="template">
+			<div id="aboutWarp" class="aboutWarp">
+			<div class="aboutPage">
+			<h1>Xuan Thuy
+			<br>
+			Bird Guide</h1>
+			<div class="lineAbout"></div>
+			<h2>Xuan Thuy</h2>
+			<div class="lineAbout2"></div>
+			<p class="fontSw">
+			This is a project created by two volunteers (Robert Mildenberger and Niklas Schäfer) of the Xuan Thuy Nationalpark in 2015.
+			<br />
+			<br />
+			We haven't and we won't profit from this project in terms of money, because it's a part of our voluntary service here in the Nationalpark.
+			<br />
+			<br />
+			All the informations about the birds were taken from the original "Xuan Thuy Nationalpark bird guide"-book in agreement with the authorities for the book.
+			<br />
+			<br />
+			All the pictures were taken from the World Wide Web. We attemped to contact every owner/photographer of the pictures and we got the permission for the usage of the most of the pictures. But still we could't contact every owner/photographer, so if you are one of them and you don't want your picture to be used or you are not satisfied with the way we use it, please contact us.
+			</p>
+			<h2>Design</h2>
+			<div class="lineAbout2"></div>
+			<p class="fontSw">
+			Niklas Schäfer and Robert Mildenberger
+			</p>
+			<h2>Contact</h2>
+			<div class="lineAbout2"></div>
+			<p id="mail" class="fontSw">
+			mildenberger.robert@gmail.com
+			</p>
+			<p id="copyRight" class="fontSw">
+			© Robert Mildenberger, Niklas Schaefer,<br />All Rights Reserved
+			</p>
+			<h2>Photographers</h2>
+			<div class="lineAbout2"></div>
+			<p class="fontSw" style="text-align: center;">We want to say thank you to all the photographers, who made this possible!</p>
+			<p id="photoCreditNames" class="fontSw" style="padding-bottom: 100px;"></p>
+			<button id="downReset" class="downResetAbout" onclick="downReset()">
+			IMAGES
+			</button>
+			</div>
+			</div>
+		</script>
+		<script id="mainPageTemplate" type="template">
+			<div id="mPWrap" class="mPWarp">
+			<div id="mPTitel">
+			<h1 id="mPTitelText">BIRD GUIDE</h1>
+			</div>
+			<div id="mPNavButtonC">
+			<a href="#seasonMenu">
+			<button id="mPNavButtonSeas" class="topMargin">
+			<p id="mainPageSeason" class="verticalCenter">
+			SEASON
+			</p>
+			</button></a>
+			<a href="#name">
+			<button id="mPNavButtonName" class="topMargin">
+			<p id="mainPageName" class="verticalCenter">
+			NAME
+			</p>
+			</button></a>
+			</div>
+			<img id="backgroundBirdImg" src="images/pageElements/Vogel-Startseite.png" onclick="birdSpinn1()" />
+			<a href="#about">
+			<div id="aboutToggle">
+			<p id="aboutText">
+			ABOUT
+			</p>
+			</div></a>
+			<a>
+			<div id="mPLangChange">
+			<p id="mPLang">
+			VIET
+			</p>
+			</div></a>
+			</div>
+		</script>
+		<script>
+			var photoGrapher = "Terry Townshend, Hiyashi Haka, Alexandersu, Lai Jiun Loong, Ashok Kumar Mallik, Bhavesh Rathod, Gary Kinard, Michael Gillam, James Eaton, akhanhk, Vietnambirdnews, Yachokun, Cygnuskota, RuiYang Ho, Gyorgy Szimuly, Nilo Arribas, Jr., Anton Croos , Challiyan , Challiyil Eswaramangalath Vipin, VasuVR, Subrato Sanyal, Vyatich, Zahoor-Salmi, Patrick K, Tony Ashton, Thomas Buenaflor, Colin Trainor, Hironori Masuda, Eurylaimmus, Andreas Trepte, Duade Paton, Larry Bond , Kim Smith, John C. Avise, Mike Ross, Alan NG Singapore, Ayuwat Jearwattanakanok, Eddy lee, Dhanatas Thovanich, Greg Miles, Felix Ng, Bob Kaufman, 大卷尾, Dr. Raju Kasambe , remove, Craig McKenzie, Kisup Lee, cuatrok77 , Rob Aranda, Josep del Hoyo, JJ Harrison , hyongchol kim, cthomas, Dick Daniels , Jim Coda, Arthur Morris/Vireo, Frances Morales , Howard Wu, Hoonwai, LostnSpace2011, HAZY, Dr. Chris Hoyle, David Manson, Koshy Koshy , Shiju Sugunan, Fir0002/Flagstaffotos , Avinash Krishnan, Godwin-C, Sijanto, Distinctions, Astrid Kant, Jari Peltomäki, Auður Matthíasdóttir, Terry Townshend, Dave Brown, Vivian, Alder, Yogesh J Rane, Tom Davis, Tiziano Cei, ROQUERO SOLITARIO II, Marco Valentini, AbdulRahman Al-Sirhan, Somchai Kanchanasut, Jason Thompson, P.Supat, sesamest74, Guy Poisson, Kiran Poonacha, Sathish Poojari, Craig Branwens, Ignacio Yufera, Mike Thrower / Kris Gibb, Khong Quay Lai, Sreedev Puthur , Marc Gottenbos, Terry, T. Paris, Mark Itol, Mary Braddock, Margaret Leggoe, Ron Dudley, Clara Coen, Mdf , Gary, Rashed Al Hajji, Greg Miller, John C. Avise., Fong-Sheau Lee, Eling Lee, Kitty koo, Ken, kaybsteve, Alex Vargas, Romy Ocon, Folkert Hindriks, David Beadle, Eddy Swan, Robert DeCandido, Francis Yap, Paul Bourdin, Ralph Christian Rosenbauer, chris van royen, Per Holmen, Karsten G Pedersen, deoroller, Saptagirish Oleti, Nikolay Staykov, Delson Roche, Štěpán Mikulka, Alexdersu, Sergey Pisarevsky, John A Thompson, Andy Astbury, Solomon Sampath Kumar, Jmrocek, Dajan Chiou, Ales Gola, Matthew Paulson, Daniel W. Clark, Tony Hisgett, Daniel Pettersson, Agata Urbaniak Phozography, pjt56 , Gerry Palmer, Cristiano Crolle, Bjarni in Iceland, Paul Cools, Patrice Mariolan, Alpsdake , Ian F., Lennart Hessel, Akshay Charegaonkar , Rajesh Shah, Bikram Grewal, Edmund Fellowes, Lars Madsén, Aerien, Nebrot , Badjoby , Andy Hood, Audubon, Laurent Demongin, Chan wei lun, James Wong, Graeme Guy, Dani Valverde, Kevin B Agar, Judd Patterson, Geir Jensen, Amit Thakurta, Alnus , Allen, Wei Yichao, Jeremiah Blatz, Christer Landgren, Stuutje1979, Mike Lane, ahmet karataş, Jamnagar, Kazua Yamamoto, Richard Bartz , Joerg Rockenberger, Antero Topp, Pierre Dalous , Mark Andrews, Wolfgang S. Kühn, Bogbumper , Martin Mecnarowski, Anukash, DanielByron, Kev Chapman, Alan Gallagher, Jens Ståhlstierna, Justin de Villeneuve, Eduardo Estéllez, Salvador Solé Soriano, Ronald Slabke, Raniero Massoli-Novelli, Birds World, Poisedforflights, cuwon, Toni, Andy Ng , Zo Cozy, Rey Sta. Ana, Wai Yien Chu, Jerry C, Tim Edelsten, Rob Hutchinson, Ozma, Ukown, Wilson Dring, wildlifetours, Arnika travel, Miguel Ángel Cuéllar Carrascal, Sunil Singhal, Zarutat, Toby Houlton, Paolo Taranto, Wolfram Riech, ladikos, Hans Hillewaert , zikko1952, Ritesh Bagul, Himansu Tripathy, Anup Dutt, vikash49, Cetin Ceki, Zippo, Nitin Prabhudesai, Kulashekara, Prashanth Sampagar, Tomas Lundquist, Chung Kiu, Ryan Cheng, oLDcaR, Changhua Coast Conservation Action, M N Srinivasa Raju, Yann, Ken Havard, Chong Qing Ka Cha, Hkinni, Shelley Rutkin, Rocking Robin/John Whitting, Mark Fisher, Phil Palmer, Mike Watson, Nick Bray, Yunus Mony, Samyak Kaninde, Thomas Gut, Ramki Sreenivasan, Satyesh Naik, Frankie Chu, Mark S. Szantyr, Adam Rogers, Lip Kee, Shanthanu Bhardwaj, Rushen B. , Mike Buckland, Thomas Chan, Jem Babbington, Jainy Kuriakose, Peter Ericsson, Apisit Wilaijit, Lawrence Neo, Sandeep Gangadharan, Chong Boon Leong, Deepak Sankat, David Taylor, Dolly Laishram, Nobuo Matsumura, たー坊 , Uncle Tay, H.Suzuki, Paulo Coteriano, Alan L., Joe Pender, Steve Smith, Hans Olofsson, André Riis Ebbesen, Bo Shunqi, J.M.Garg , Ravindra Arali, Drshamkidoor, Laurens Steijn, Bishan Monnappa, Meggie Francis, Omprakash Hatua, Paul Lehman, Hnforestry, Melvin Yap , Zingbean, Andrew Hardacre, Sylvain HAYE , Thai National Parks , Thurner Hof , Alena Hašková & Zdeněk Hašek, Ronnie Ooi, kun chin chung, Jonas Landolt, Aditya Joshi , Jack B, Colin Forster, Zahidi, Michael L. Baird, Gregg Thompson, Steve Zack, Tim Balmer, Kusmin&Api, Alfred Yan, Erwin Luesink, Alan D. Wilson, Andy D, Mikael Bauer, Jonathan Martinez, bird.soong, Joe Beale, 李豐曉 , Sue Hsu, Richard Pittam, Silas Olofson, Mathias Putze , Stefan Hage, Nigel Atkinson, Spoon-billed Sandpiper Team, Stuart Rae, design7, B. Hoag, Aomorikuma, H.D.B., Andrew Smith, Samera Al Khalifah, Jason Thopmson, Martin Garner, Mike Barker, Petri Tamminen, Rushenb, Jayant Atrey, Hermis Haridas, Mark Johnson, Gerry Brett, Didier Buysse, Akaikingyo, Arun Kumar, Anantha Murthy, Clement M Francis, Linda Freedombird, Michael B. Romani, Tom Ingram, Palau Conservation Society, Glen Fergus, fazalaliadil, Dhruvaraj S, Jayalakshmi K, Gin Tonic, C.T., Ian White, Andrew Ogilvie, Sam Hobson, Prasanna AV, Wild Art Team, Mark Warrillow-Thomson, Laura Dyer, Richard Diepstraten, Pan Chih Yuan, Paul Wu, Sharad Vohra, vasanthan.p.j, Santanu Manna, Sumit Sengupta, Rajiv Lather, Sumit Sen, Ian N. White, Marc Anderson, Martin Lofgren, Huang Wen-Hsin, B.J. Bergstrom, Dhaivat Hathi, Jeffrey A. Gordon, Steve Winter, Ken Simonite, Taryn Marie, Tormod Amundsen, Tom Grey, Jacob S, Subramanya_CK, Özden Sağlam, Howard King, Steve Adow, Soumyadeep Chatterjee, Shyamkumar Puravankara ,Santhosh Krishnamoorthy, José Luís Barros, Mark Coller, Nayan Khanolkar, Francesco Veronesi, Howard B. Eskin, MN Birder, Prashant Srivastava, Nordfold, Harold van der Meer, Gidzy, Laszlo Hargitai, Peter Meffert, Songbirds-Slaughter, Lankhorst, Scotland's Bird Club, Doug Lloyd, Dan Pancamo, Tony Mills, Jemi & John Holmes, Boris Smokrovic, Uzair Abd Rahim, Kuro, Sundaresh BV, Jineesh Mallishery, Rajaprasath Dorairaj, Lin Jiansheng, Robin Newlin, Tony Whitehead, USGS, Geoffrey Dabb, Howard Tseng, Wings 'n Things, bbe02201, Sohnjoo, Sunit Gupta, Simon Rix, Mainak Das, Uzair Ar, William IP, Henry Goh, Prasad Basavaraj, Peter A. Reichart, Kavi Nanda, Uncle Fai, Warih Jati Hanggoro, Brett Dolsen, Ross-Taylor, Chris Collins, Ezhuttukari , Vikash Agarwal, Hemant Kumar, Vasanthan.p.j, Nitin S, Satyam Dave, Sharad Agrawal, Ric Seet, David Dale, Andrea Schaffer, Martin Peacock, Mohammad Khorshed, Francksan, Martin Standley, Richard Peters, Duanaud, Dig Deep, David Gandy, Andy_LYT, Jiri Bohdal, Magnus Hellström, Frans Vandewalle, Audubon Canyon Ranch, Tadeusz Rosinski, Challiyan, Stephen Burch, Rohan Kamath, Roberto Melotti, RickvGroningen, solveig østerø schrøder, Darren, Olaf Oliviero Riemer, Jean-Daniel L'HERIAU, Zul Ya, anup deodhar, Nancy Johnston, Syed F Abbas, Sunil Elias, Cambodia Birding, Michael Schmitz, Lazy Sod, YACHiYO, Wild Eye View, Frank Vassen , Martin Hale, Anatoliy Kuzmin, Charles Lam , Andreas Gruber, Michael Flowers, Nicholas Watts, Ken Fung, Simon Liao, Koala, Tony Davison, Tony Brown, Wendy J., Niranjan Sant, Rungsrit Kanjanavanit, Kamal Muda";
+		</script>
+		<script src="js/app/app.js"></script>
+		<script src="js/lib/SwiperXL.js"></script>
+		<script src="js/app/seasonMenu.js"></script>
+		<script>
+			// true == Englisch false == Viet
+			var galleryTop;
+			var myScroll;
+
+			function loaded(imageID, bildID) {
+				console.log(imageID);
+				console.log(bildID);
+				var hammertime = Hammer(document.getElementById(imageID), {
+				});
+				hammertime.get('pinch').set({
+					enable : true
+				});
+				var rect = document.getElementById(bildID);
+				var posX = 0,
+				    posY = 0,
+				    scale = 1,
+				    last_scale = 1,
+				    last_posX = 0,
+				    last_posY = 0,
+				    max_pos_x =
+				    wAPP,
+				    max_pos_y =
+				    wAPP;
+
+				hammertime.on('pan tap panend doubletap pinch pinchend', function(ev) {
+					switch(ev.type) {
+					case 'pinch':
+						console.log("PINCHE");
+						scale = Math.max(0.5, Math.min(last_scale * (ev.scale), 4));
+						console.log(ev.scale);
+						console.log(scale);
+						break;
+					case 'pinchend':
+						console.log("pinchend!");
+						if (scale <= 1) {
+							scale = 1;
+						}
+						last_scale = scale;
+						break;
+					case 'pan':
+						if (scale != 1) {
+							posX = last_posX + ev.deltaX;
+							posY = last_posY + ev.deltaY;
+							if (posX > max_pos_x) {
+								posX = max_pos_x;
+							}
+							if (posX < -max_pos_x) {
+								posX = -max_pos_x;
+							}
+							if (posY > max_pos_y) {
+								posY = max_pos_y;
+							}
+							if (posY < -max_pos_y) {
+								posY = -max_pos_y;
+							}
+						} else {
+							posX = 0;
+							posY = 0;
+							saved_posX = 0;
+							saved_posY = 0;
+						}
+						break;
+					case 'panend':
+						last_posX = posX < max_pos_x ? posX : max_pos_x;
+						last_posY = posY < max_pos_y ? posY : max_pos_y;
+						break;
+
+					case 'doubletap':
+						if (scale == 1) {
+							scale = 2;
+							posX = 0;
+							posY = 0;
+						} else {
+							scale = 1;
+						}
+					}
+					var trans = "translate3d(0, 0, 0) scale(1)";
+
+					if (scale != 1) {
+						trans = "translate3d(" + posX + "px," + posY + "px, 0) scale(" + scale + ")";
+					}
+					rect.style.transform = trans;
+
+					if (scale == 1) {
+						$('#imgZoomGallery').removeClass('swiper-no-swiping');
+					} else {
+						$('#imgZoomGallery').addClass('swiper-no-swiping');
+					}
+				});
+			}
+
+			function loaded1() {
+				birdListScroll = new IScroll('#birdListWarp', {
+					scrollbars : true,
+					click : true,
+					interactiveScrollbars : true,
+					scrollbars : 'custom',
+					resizeScrollbars : false
+				});
+				setTimeout(scrollToBird, 1);
+				setTimeout(function() {
+					if (birdListScroll != null) {
+						birdListScroll.refresh();
+					}
+				}, 300);
+				setTimeout(function() {
+					if (birdListScroll != null) {
+						birdListScroll.refresh();
+					}
+				}, 500);
+				setTimeout(function() {
+					if (birdListScroll != null) {
+						birdListScroll.refresh();
+					}
+				}, 750);
+				setTimeout(function() {
+					if (birdListScroll != null) {
+						birdListScroll.refresh();
+					}
+				}, 2000);
+			}
+
+
+			document.addEventListener('touchmove', preventDefault, false);
+			function preventDefault(e) {
+				e.preventDefault();
+			};
+
+		</script>
+		<script src="js/app/donwloadDemAll.js"></script>
+	</body>
+</html>
