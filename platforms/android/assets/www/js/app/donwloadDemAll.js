@@ -1,5 +1,5 @@
 // sahne am ende noch ma gucken!
-
+var downloadWebPage = "http://xuanthuy.lima-city.de/images/birds/";
 var dataUrl;
 var fileNameDirectory;
 var a = 1;
@@ -23,6 +23,33 @@ function downReset() {
 	downloading = false;
 	somethingWentWrong = false;
 	downDemAlll();
+}
+
+
+function checkConnection() {
+    var networkState = navigator.connection.type;
+
+    var states = {};
+    states[Connection.UNKNOWN]  = 'exp';
+    states[Connection.ETHERNET] = 'wifi';
+    states[Connection.WIFI]     = 'wifi';
+    states[Connection.CELL_2G]  = 'exp';
+    states[Connection.CELL_3G]  = 'exp';
+    states[Connection.CELL_4G]  = 'exp';
+    states[Connection.CELL]     = 'exp';
+    states[Connection.NONE]     = 'check';
+    console.log(states);
+    console.log(states[networkState]);
+	if (states[networkState] == "check") {
+		alert('Please check the internet connection and click ok!');
+		checkConnection();
+	} else if (states[networkState] == "exp") {
+		alert('You are Connected to the Mobilenetwork, that could be expensive the content to download is around 70MB. Click ok if you dont mind!');
+		downDemAlll();
+	} else {
+		downDemAlll();
+	}
+    
 }
 
 function downDemAlll() {
@@ -162,11 +189,11 @@ function downloadInit() {
 
 	if (a <= 216) {
 		if (b == 1) {
-			birdDownloadPath = "http://xuanthuy.philipp-m.de/birds/images/birds/" + a + ".jpg";
+			birdDownloadPath = downloadWebPage + a + ".jpg";
 			console.log(birdDownloadPath + " download next bird progress");
 			fileNameDirectory = cordova.file.dataDirectory + a + ".jpg";
 		} else {
-			birdDownloadPath = "http://xuanthuy.philipp-m.de/birds/images/birds/" + a + "_" + b + ".jpg";
+			birdDownloadPath = downloadWebPage + a + "_" + b + ".jpg";
 			fileNameDirectory = cordova.file.dataDirectory + a + "_" + b + ".jpg";
 		}
 		window.resolveLocalFileSystemURL(fileNameDirectory, downDemAlllSchleife, downloadTheNext);
@@ -189,20 +216,14 @@ function downloadTheNext() {
 			anotherTry++;
 			downloadTheNext();
 		} else {
-			//alert("check your Internet connection! and push ok!");
 			if (anotherTry <= 1) {
 				anotherTry++;
 				downloadTheNext();
 			} else {
 				downDemAlllSchleife();
-				anotherTry = 0;
 				somethingWentWrong = true;
 			}
 		}
 
-	}, false, {
-		headers : {
-			"Authorization" : "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
-		}
 	});
 }

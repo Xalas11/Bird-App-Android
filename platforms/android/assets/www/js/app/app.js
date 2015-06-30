@@ -16,7 +16,7 @@ function onDeviceReady() {
 	if (allDonwloaded == "downloaded") {
 		$("#downWrapID").hide();
 	} else {
-		downDemAlll();
+		checkConnection();
 	}
 }
 
@@ -103,6 +103,7 @@ function route(event) {
 			$('.aboutPageBack').show();
 			$('#fixedShow').show();
 			$('#navBarShower').hide();
+			setTimeout(function() {document.getElementById("photoCreditNames").innerHTML = photoGrapher;}, 10);
 			document.removeEventListener('touchmove', preventDefault, false);
 		} else if (hash === "#detailedPage") {
 			document.removeEventListener('touchmove', preventDefault, false);
