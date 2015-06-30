@@ -91,6 +91,7 @@ body, html {
 @-ms-viewport{height:device-height}
 @-ms-viewport{width:device-width}
 #anticlick {
+	z-index: 9999;
 	display: none;
 	position: fixed;
 	height: 100%;

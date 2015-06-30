@@ -1,5 +1,5 @@
 // sahne am ende noch ma gucken!
-
+var downloadWebPage = "http://xuanthuy.lima-city.de/images/birds/";
 var dataUrl;
 var fileNameDirectory;
 var a = 1;
@@ -162,11 +162,11 @@ function downloadInit() {
 
 	if (a <= 216) {
 		if (b == 1) {
-			birdDownloadPath = "http://xuanthuy.philipp-m.de/birds/images/birds/" + a + ".jpg";
+			birdDownloadPath = downloadWebPage + a + ".jpg";
 			console.log(birdDownloadPath + " download next bird progress");
 			fileNameDirectory = cordova.file.dataDirectory + a + ".jpg";
 		} else {
-			birdDownloadPath = "http://xuanthuy.philipp-m.de/birds/images/birds/" + a + "_" + b + ".jpg";
+			birdDownloadPath = downloadWebPage + a + "_" + b + ".jpg";
 			fileNameDirectory = cordova.file.dataDirectory + a + "_" + b + ".jpg";
 		}
 		window.resolveLocalFileSystemURL(fileNameDirectory, downDemAlllSchleife, downloadTheNext);
@@ -199,9 +199,5 @@ function downloadTheNext() {
 			}
 		}
 
-	}, false, {
-		headers : {
-			"Authorization" : "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
-		}
 	});
 }

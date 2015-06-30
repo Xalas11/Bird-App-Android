@@ -425,6 +425,7 @@
 						trans = "translate3d(" + posX + "px," + posY + "px, 0) scale(" + scale + ")";
 					}
 					rect.style.transform = trans;
+					rect.style.webkitTransform = trans;
 
 					if (scale == 1) {
 						$('#imgZoomGallery').removeClass('swiper-no-swiping');
