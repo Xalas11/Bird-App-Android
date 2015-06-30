@@ -90,6 +90,13 @@ body, html {
 @viewport{width:device-width}
 @-ms-viewport{height:device-height}
 @-ms-viewport{width:device-width}
+#anticlick {
+	display: none;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	color: rgba(255, 255, 255, 0);
+}
 /* copyRight */
 .fontSw {
 	font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;

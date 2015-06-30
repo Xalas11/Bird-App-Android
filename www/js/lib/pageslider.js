@@ -33,6 +33,13 @@ function PageSlider(container) {
 
     // Use this function directly if you want to control the sliding direction outside PageSlider
     this.slidePageFrom = function(page, from) {
+    	
+    	var pagecoutn = 0;
+   		if (pagecoutn == 0) {
+   			pagecoutn = 1;
+   		} else {
+   			$("#anticlick").show();
+   		}
 
         container.append(page); // windowsphone .html  find a workaround// android should be append laguage switch... low versions until 4.4!!!
 
@@ -82,9 +89,9 @@ function PageSlider(container) {
 					};
 					oldswitch = hashlang; 
 					}, 250);
-        // currentPage.one('transitionEnd webkitTransitionEnd transitionend', function(e) {
-            // $(e.target).remove();
-        // });
+        currentPage.one('transitionEnd webkitTransitionEnd transitionend', function(e) {
+            $("#anticlick").hide();
+        });
 
         // Force reflow. More information here: http://www.phpied.com/rendering-repaint-reflowrelayout-restyle/
         container[0].offsetWidth;
