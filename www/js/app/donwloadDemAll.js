@@ -25,6 +25,33 @@ function downReset() {
 	downDemAlll();
 }
 
+
+function checkConnection() {
+    var networkState = navigator.connection.type;
+
+    var states = {};
+    states[Connection.UNKNOWN]  = 'exp';
+    states[Connection.ETHERNET] = 'wifi';
+    states[Connection.WIFI]     = 'wifi';
+    states[Connection.CELL_2G]  = 'exp';
+    states[Connection.CELL_3G]  = 'exp';
+    states[Connection.CELL_4G]  = 'exp';
+    states[Connection.CELL]     = 'exp';
+    states[Connection.NONE]     = 'check';
+    console.log(states);
+    console.log(states[networkState]);
+	if (states[networkState] == "check") {
+		alert('Please check the internet connection and click ok!');
+		checkConnection();
+	} else if (states[networkState] == "exp") {
+		alert('You are Connected to the Mobilenetwork, that could be expensive the content to download is around 70MB. Click ok if you dont mind!');
+		downDemAlll();
+	} else {
+		downDemAlll();
+	}
+    
+}
+
 function downDemAlll() {
 	b = 0;
 	if (downloading == false) {
@@ -189,7 +216,6 @@ function downloadTheNext() {
 			anotherTry++;
 			downloadTheNext();
 		} else {
-			alert("check your Internet connection! and push ok!");
 			if (anotherTry <= 1) {
 				anotherTry++;
 				downloadTheNext();

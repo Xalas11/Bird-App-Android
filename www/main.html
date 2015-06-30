@@ -14,12 +14,6 @@
 			var CC2 = 'CC BY-SA 2.0';
 			var CC1 = 'CC BY-SA 1.0';
 			var arr = 'All Rights Reserved';
-
-			if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-				var msViewportStyle = document.createElement("style");
-				msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));
-				document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
-			}
 		</script>
 		<script src="cordova.js"></script>
 		<script src="js/lib/jquery.js"></script>
@@ -93,37 +87,37 @@
 			</div>
 		</div>
 		<div id="anticlick"></div>
-		<!--
+
 		<div id="downWrapID">
-		<div id="centerProgress">
-		<div id="centerProgressChild">
-		<div id ="downProgess" class="downloadWindow">
-		<h2 id="downHeader" style="font-size: 2em">DOWNLOADING BIRD PICTURES PLEASE WAIT...</h2>
+			<div id="centerProgress">
+				<div id="centerProgressChild">
+					<div id ="downProgess" class="downloadWindow">
+						<h2 id="downHeader" style="font-size: 2em">DOWNLOADING BIRD PICTURES PLEASE WAIT...</h2>
 
-		<div id="progressBar">
-		<div id="progressContainer">
-		<div id="progress-bar" style="background:url(images/pageElements/loading.png);"></div>
-		<div id="progressBox"></div>
-		<p id="progressTEXT">
-		0%
-		</p>
-		</div>
-		</div>
-		<p id="downInfo">
-		MAKE SURE YOUR WIFI IS ON, THE CONTENT IS AROUND 60MB.
-		</p>
+						<div id="progressBar">
+							<div id="progressContainer">
+								<div id="progress-bar" style="background:url(images/pageElements/loading.png);"></div>
+								<div id="progressBox"></div>
+								<p id="progressTEXT">
+									0%
+								</p>
+							</div>
+						</div>
+						<p id="downInfo">
+							MAKE SURE YOUR WIFI IS ON, THE CONTENT IS AROUND 60MB.
+						</p>
 
+					</div>
+				</div>
+			</div>
+			<button id="downStop"class="downDemAllStop" onclick="downDemAlll()">
+				STOP
+			</button>
+			<button id="downLang"class="downLangChange" onclick="downLang()">
+				VIET
+			</button>
 		</div>
-		</div>
-		</div>
-		<button id="downStop"class="downDemAllStop" onclick="downDemAlll()">
-		STOP
-		</button>
-		<button id="downLang"class="downLangChange" onclick="downLang()">
-		VIET
-		</button>
-		</div>
-		-->
+
 		<script id="birdSeasonMenuTemplate" type="template">
 			<div id="sPContainer">
 			<div id="sPCenter">

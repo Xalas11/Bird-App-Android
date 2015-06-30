@@ -8,18 +8,12 @@
 		<link rel="stylesheet" type="text/css" href="css/mainStyle.css">
 		<link rel="stylesheet" href="css/swiper.css" />
 		<script>
-		var CC4 = 'CC BY-SA 3.0';
-		var CC3 = 'CC BY-SA 3.0';
-		var CC25 = 'CC BY-SA 2.5';
-		var CC2 = 'CC BY-SA 2.0';
-		var CC1 = 'CC BY-SA 1.0';
-		var arr = 'All Rights Reserved';
-		
-			if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-				var msViewportStyle = document.createElement("style");
-				msViewportStyle.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}"));
-				document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
-			}
+			var CC4 = 'CC BY-SA 3.0';
+			var CC3 = 'CC BY-SA 3.0';
+			var CC25 = 'CC BY-SA 2.5';
+			var CC2 = 'CC BY-SA 2.0';
+			var CC1 = 'CC BY-SA 1.0';
+			var arr = 'All Rights Reserved';
 		</script>
 		<script src="cordova.js"></script>
 		<script src="js/lib/jquery.js"></script>
@@ -92,7 +86,8 @@
 				</div>
 			</div>
 		</div>
-		<!--
+		<div id="anticlick"></div>
+
 		<div id="downWrapID">
 			<div id="centerProgress">
 				<div id="centerProgressChild">
@@ -122,7 +117,7 @@
 				VIET
 			</button>
 		</div>
-		-->
+
 		<script id="birdSeasonMenuTemplate" type="template">
 			<div id="sPContainer">
 			<div id="sPCenter">
@@ -266,7 +261,7 @@
 			<div class="lineAbout"></div>
 			<h2>Xuan Thuy</h2>
 			<div class="lineAbout2"></div>
-			<p>
+			<p class="fontSw">
 			This is a project created by two volunteers (Robert Mildenberger and Niklas Schäfer) of the Xuan Thuy Nationalpark in 2015.
 			<br />
 			<br />
@@ -276,26 +271,25 @@
 			All the informations about the birds were taken from the original "Xuan Thuy Nationalpark bird guide"-book in agreement with the authorities for the book.
 			<br />
 			<br />
-			<br />
-			All the pictures were taken from the World Wide Web and we don't own any rights.
-			<br />
-			<br />
-			If you are the original owner/creator of any of those pictures used for this Application and you want it to be deleted, please contact us. We will delete it immediately.
-			Thank you and have a good time using this Application!
+			All the pictures were taken from the World Wide Web. We attemped to contact every owner/photographer of the pictures and we got the permission for the usage of the most of the pictures. But still we could't contact every owner/photographer, so if you are one of them and you don't want your picture to be used or you are not satisfied with the way we use it, please contact us.
 			</p>
 			<h2>Design</h2>
 			<div class="lineAbout2"></div>
-			<p>
-			Robert Mildenberger and Niklas Schaefer
+			<p class="fontSw">
+			Niklas Schäfer and Robert Mildenberger
 			</p>
 			<h2>Contact</h2>
 			<div class="lineAbout2"></div>
-			<p id="mail">
-			mildenberger.robert@<br>googlemail.com
+			<p id="mail" class="fontSw">
+			mildenberger.robert@gmail.com
 			</p>
-			<p id="copyRight">
-			use it as you want.
+			<p id="copyRight" class="fontSw">
+			© Robert Mildenberger, Niklas Schaefer,<br />All Rights Reserved
 			</p>
+			<h2>Photographers</h2>
+			<div class="lineAbout2"></div>
+			<p class="fontSw" style="text-align: center;">We want to say thank you to all the photographers, who made this possible!</p>
+			<p id="photoCreditNames" class="fontSw" style="padding-bottom: 100px;"></p>
 			<button id="downReset" class="downResetAbout" onclick="downReset()">
 			IMAGES
 			</button>
@@ -335,6 +329,9 @@
 			</p>
 			</div></a>
 			</div>
+		</script>
+		<script>
+			var photoGrapher = "Terry Townshend, Hiyashi Haka, Alexandersu, Lai Jiun Loong, Ashok Kumar Mallik, Bhavesh Rathod, Gary Kinard, Michael Gillam, James Eaton, akhanhk, Vietnambirdnews, Yachokun, Cygnuskota, RuiYang Ho, Gyorgy Szimuly, Nilo Arribas, Jr., Anton Croos , Challiyan , Challiyil Eswaramangalath Vipin, VasuVR, Subrato Sanyal, Vyatich, Zahoor-Salmi, Patrick K, Tony Ashton, Thomas Buenaflor, Colin Trainor, Hironori Masuda, Eurylaimmus, Andreas Trepte, Duade Paton, Larry Bond , Kim Smith, John C. Avise, Mike Ross, Alan NG Singapore, Ayuwat Jearwattanakanok, Eddy lee, Dhanatas Thovanich, Greg Miles, Felix Ng, Bob Kaufman, 大卷尾, Dr. Raju Kasambe , remove, Craig McKenzie, Kisup Lee, cuatrok77 , Rob Aranda, Josep del Hoyo, JJ Harrison , hyongchol kim, cthomas, Dick Daniels , Jim Coda, Arthur Morris/Vireo, Frances Morales , Howard Wu, Hoonwai, LostnSpace2011, HAZY, Dr. Chris Hoyle, David Manson, Koshy Koshy , Shiju Sugunan, Fir0002/Flagstaffotos , Avinash Krishnan, Godwin-C, Sijanto, Distinctions, Astrid Kant, Jari Peltomäki, Auður Matthíasdóttir, Terry Townshend, Dave Brown, Vivian, Alder, Yogesh J Rane, Tom Davis, Tiziano Cei, ROQUERO SOLITARIO II, Marco Valentini, AbdulRahman Al-Sirhan, Somchai Kanchanasut, Jason Thompson, P.Supat, sesamest74, Guy Poisson, Kiran Poonacha, Sathish Poojari, Craig Branwens, Ignacio Yufera, Mike Thrower / Kris Gibb, Khong Quay Lai, Sreedev Puthur , Marc Gottenbos, Terry, T. Paris, Mark Itol, Mary Braddock, Margaret Leggoe, Ron Dudley, Clara Coen, Mdf , Gary, Rashed Al Hajji, Greg Miller, John C. Avise., Fong-Sheau Lee, Eling Lee, Kitty koo, Ken, kaybsteve, Alex Vargas, Romy Ocon, Folkert Hindriks, David Beadle, Eddy Swan, Robert DeCandido, Francis Yap, Paul Bourdin, Ralph Christian Rosenbauer, chris van royen, Per Holmen, Karsten G Pedersen, deoroller, Saptagirish Oleti, Nikolay Staykov, Delson Roche, Štěpán Mikulka, Alexdersu, Sergey Pisarevsky, John A Thompson, Andy Astbury, Solomon Sampath Kumar, Jmrocek, Dajan Chiou, Ales Gola, Matthew Paulson, Daniel W. Clark, Tony Hisgett, Daniel Pettersson, Agata Urbaniak Phozography, pjt56 , Gerry Palmer, Cristiano Crolle, Bjarni in Iceland, Paul Cools, Patrice Mariolan, Alpsdake , Ian F., Lennart Hessel, Akshay Charegaonkar , Rajesh Shah, Bikram Grewal, Edmund Fellowes, Lars Madsén, Aerien, Nebrot , Badjoby , Andy Hood, Audubon, Laurent Demongin, Chan wei lun, James Wong, Graeme Guy, Dani Valverde, Kevin B Agar, Judd Patterson, Geir Jensen, Amit Thakurta, Alnus , Allen, Wei Yichao, Jeremiah Blatz, Christer Landgren, Stuutje1979, Mike Lane, ahmet karataş, Jamnagar, Kazua Yamamoto, Richard Bartz , Joerg Rockenberger, Antero Topp, Pierre Dalous , Mark Andrews, Wolfgang S. Kühn, Bogbumper , Martin Mecnarowski, Anukash, DanielByron, Kev Chapman, Alan Gallagher, Jens Ståhlstierna, Justin de Villeneuve, Eduardo Estéllez, Salvador Solé Soriano, Ronald Slabke, Raniero Massoli-Novelli, Birds World, Poisedforflights, cuwon, Toni, Andy Ng , Zo Cozy, Rey Sta. Ana, Wai Yien Chu, Jerry C, Tim Edelsten, Rob Hutchinson, Ozma, Ukown, Wilson Dring, wildlifetours, Arnika travel, Miguel Ángel Cuéllar Carrascal, Sunil Singhal, Zarutat, Toby Houlton, Paolo Taranto, Wolfram Riech, ladikos, Hans Hillewaert , zikko1952, Ritesh Bagul, Himansu Tripathy, Anup Dutt, vikash49, Cetin Ceki, Zippo, Nitin Prabhudesai, Kulashekara, Prashanth Sampagar, Tomas Lundquist, Chung Kiu, Ryan Cheng, oLDcaR, Changhua Coast Conservation Action, M N Srinivasa Raju, Yann, Ken Havard, Chong Qing Ka Cha, Hkinni, Shelley Rutkin, Rocking Robin/John Whitting, Mark Fisher, Phil Palmer, Mike Watson, Nick Bray, Yunus Mony, Samyak Kaninde, Thomas Gut, Ramki Sreenivasan, Satyesh Naik, Frankie Chu, Mark S. Szantyr, Adam Rogers, Lip Kee, Shanthanu Bhardwaj, Rushen B. , Mike Buckland, Thomas Chan, Jem Babbington, Jainy Kuriakose, Peter Ericsson, Apisit Wilaijit, Lawrence Neo, Sandeep Gangadharan, Chong Boon Leong, Deepak Sankat, David Taylor, Dolly Laishram, Nobuo Matsumura, たー坊 , Uncle Tay, H.Suzuki, Paulo Coteriano, Alan L., Joe Pender, Steve Smith, Hans Olofsson, André Riis Ebbesen, Bo Shunqi, J.M.Garg , Ravindra Arali, Drshamkidoor, Laurens Steijn, Bishan Monnappa, Meggie Francis, Omprakash Hatua, Paul Lehman, Hnforestry, Melvin Yap , Zingbean, Andrew Hardacre, Sylvain HAYE , Thai National Parks , Thurner Hof , Alena Hašková & Zdeněk Hašek, Ronnie Ooi, kun chin chung, Jonas Landolt, Aditya Joshi , Jack B, Colin Forster, Zahidi, Michael L. Baird, Gregg Thompson, Steve Zack, Tim Balmer, Kusmin&Api, Alfred Yan, Erwin Luesink, Alan D. Wilson, Andy D, Mikael Bauer, Jonathan Martinez, bird.soong, Joe Beale, 李豐曉 , Sue Hsu, Richard Pittam, Silas Olofson, Mathias Putze , Stefan Hage, Nigel Atkinson, Spoon-billed Sandpiper Team, Stuart Rae, design7, B. Hoag, Aomorikuma, H.D.B., Andrew Smith, Samera Al Khalifah, Jason Thopmson, Martin Garner, Mike Barker, Petri Tamminen, Rushenb, Jayant Atrey, Hermis Haridas, Mark Johnson, Gerry Brett, Didier Buysse, Akaikingyo, Arun Kumar, Anantha Murthy, Clement M Francis, Linda Freedombird, Michael B. Romani, Tom Ingram, Palau Conservation Society, Glen Fergus, fazalaliadil, Dhruvaraj S, Jayalakshmi K, Gin Tonic, C.T., Ian White, Andrew Ogilvie, Sam Hobson, Prasanna AV, Wild Art Team, Mark Warrillow-Thomson, Laura Dyer, Richard Diepstraten, Pan Chih Yuan, Paul Wu, Sharad Vohra, vasanthan.p.j, Santanu Manna, Sumit Sengupta, Rajiv Lather, Sumit Sen, Ian N. White, Marc Anderson, Martin Lofgren, Huang Wen-Hsin, B.J. Bergstrom, Dhaivat Hathi, Jeffrey A. Gordon, Steve Winter, Ken Simonite, Taryn Marie, Tormod Amundsen, Tom Grey, Jacob S, Subramanya_CK, Özden Sağlam, Howard King, Steve Adow, Soumyadeep Chatterjee, Shyamkumar Puravankara ,Santhosh Krishnamoorthy, José Luís Barros, Mark Coller, Nayan Khanolkar, Francesco Veronesi, Howard B. Eskin, MN Birder, Prashant Srivastava, Nordfold, Harold van der Meer, Gidzy, Laszlo Hargitai, Peter Meffert, Songbirds-Slaughter, Lankhorst, Scotland's Bird Club, Doug Lloyd, Dan Pancamo, Tony Mills, Jemi & John Holmes, Boris Smokrovic, Uzair Abd Rahim, Kuro, Sundaresh BV, Jineesh Mallishery, Rajaprasath Dorairaj, Lin Jiansheng, Robin Newlin, Tony Whitehead, USGS, Geoffrey Dabb, Howard Tseng, Wings 'n Things, bbe02201, Sohnjoo, Sunit Gupta, Simon Rix, Mainak Das, Uzair Ar, William IP, Henry Goh, Prasad Basavaraj, Peter A. Reichart, Kavi Nanda, Uncle Fai, Warih Jati Hanggoro, Brett Dolsen, Ross-Taylor, Chris Collins, Ezhuttukari , Vikash Agarwal, Hemant Kumar, Vasanthan.p.j, Nitin S, Satyam Dave, Sharad Agrawal, Ric Seet, David Dale, Andrea Schaffer, Martin Peacock, Mohammad Khorshed, Francksan, Martin Standley, Richard Peters, Duanaud, Dig Deep, David Gandy, Andy_LYT, Jiri Bohdal, Magnus Hellström, Frans Vandewalle, Audubon Canyon Ranch, Tadeusz Rosinski, Challiyan, Stephen Burch, Rohan Kamath, Roberto Melotti, RickvGroningen, solveig østerø schrøder, Darren, Olaf Oliviero Riemer, Jean-Daniel L'HERIAU, Zul Ya, anup deodhar, Nancy Johnston, Syed F Abbas, Sunil Elias, Cambodia Birding, Michael Schmitz, Lazy Sod, YACHiYO, Wild Eye View, Frank Vassen , Martin Hale, Anatoliy Kuzmin, Charles Lam , Andreas Gruber, Michael Flowers, Nicholas Watts, Ken Fung, Simon Liao, Koala, Tony Davison, Tony Brown, Wendy J., Niranjan Sant, Rungsrit Kanjanavanit, Kamal Muda";
 		</script>
 		<script src="js/app/app.js"></script>
 		<script src="js/lib/SwiperXL.js"></script>
@@ -422,6 +419,7 @@
 						trans = "translate3d(" + posX + "px," + posY + "px, 0) scale(" + scale + ")";
 					}
 					rect.style.transform = trans;
+					rect.style.webkitTransform = trans;
 
 					if (scale == 1) {
 						$('#imgZoomGallery').removeClass('swiper-no-swiping');

@@ -2,7 +2,8 @@
  * - History management is currently done using window.location.hash.  This could easily be changed to use Push State instead.
  * - jQuery dependency for now. This could also be easily removed.
  */
-var oldswitch = '';;
+var pagecoutn = 0;
+var oldswitch = '';
 
 function PageSlider(container) {
 	
@@ -33,6 +34,12 @@ function PageSlider(container) {
 
     // Use this function directly if you want to control the sliding direction outside PageSlider
     this.slidePageFrom = function(page, from) {
+    	
+   		if (pagecoutn == 0) {
+   			pagecoutn = 1;
+   		} else {
+   			$("#anticlick").show();
+   		}
 
         container.append(page); // windowsphone .html  find a workaround// android should be append laguage switch... low versions until 4.4!!!
 
@@ -46,7 +53,7 @@ function PageSlider(container) {
         page.attr("class", "page " + from);
 		
 					setTimeout(function() {
-					
+					$("#anticlick").hide();
 					var hashlang = window.location.hash;
 					
 					switch(oldswitch) { 
@@ -82,9 +89,6 @@ function PageSlider(container) {
 					};
 					oldswitch = hashlang; 
 					}, 250);
-        // currentPage.one('transitionEnd webkitTransitionEnd transitionend', function(e) {
-            // $(e.target).remove();
-        // });
 
         // Force reflow. More information here: http://www.phpied.com/rendering-repaint-reflowrelayout-restyle/
         container[0].offsetWidth;

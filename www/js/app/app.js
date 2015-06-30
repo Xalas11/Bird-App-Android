@@ -16,7 +16,7 @@ function onDeviceReady() {
 	if (allDonwloaded == "downloaded") {
 		$("#downWrapID").hide();
 	} else {
-		downDemAlll();
+		checkConnection();
 	}
 }
 
