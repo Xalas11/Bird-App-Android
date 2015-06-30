@@ -575,6 +575,7 @@ function loadImgGallery() {
 			var navImg = "bild" + galleryThumbs.previousIndex;
 			var transf = "translate3d(0, 0, 0) scale(1)";
 			document.getElementById(navImg).style.transform = transf;
+			document.getElementById(navImg).style.webkitTransform = transf;
 			var imageID = "zoom" + galleryThumbs.activeIndex;
 			var bildID = "bild" + galleryThumbs.activeIndex;
 			loaded(imageID, bildID);

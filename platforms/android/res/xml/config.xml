@@ -41,5 +41,5 @@
     <preference name="orientation" value="portrait" />
     <preference name="fullscreen" value="true" />
     <preference name="load-url-timeout" value="20000" />
-    <access origin="http://xuanthuy.lima-city.de/" />
+    <access origin="*" />
 </widget>
