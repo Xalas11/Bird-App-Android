@@ -33,5 +33,5 @@ versionCode = "3">
 
 	<!-- ANDROID PREFERENCES -->
 	<preference name="load-url-timeout" value="20000" />
-	<access origin="http://xuanthuy.lima-city.de/" />
+	<access origin="*" />
 </widget>
