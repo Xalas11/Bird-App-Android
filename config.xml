@@ -15,9 +15,8 @@ versionCode = "3">
 		<icon src="res/android/96xhdpi.png" density="xhdpi" />
 		<icon src="res/android/144xxhdpi.png" density="xxhdpi" />
 		<icon src="res/android/192xxxhdpi.png" density="xxxhdpi" />
-		<splash src="res/android/200x320ldpi.png" density="port-ldpi" />
-		<splash src="res/android/480x800hdpi.png" density="port-hdpi" />
 		<splash src="res/android/320x480mdpi.png" density="port-mdpi" />
+		<splash src="res/android/480x800hdpi.png" density="port-hdpi" />
 		<splash src="res/android/720x1280xhdpi.png" density="port-xhdpi" />
 		<splash src="res/android/960x1600xxhdpi.png" density="port-xxhdpi" />
 		<splash src="res/android/1280x1920xxxhdpi.png" density="port-xxxhdpi" />
