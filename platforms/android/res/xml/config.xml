@@ -21,13 +21,17 @@
     <feature name="NetworkStatus">
         <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
     </feature>
-    <icon density="mdpi" src="res/android/mdpi.png" />
-    <icon density="hdpi" src="res/android/hdpi.png" />
-    <icon density="xhdpi" src="res/android/xhdpi.png" />
-    <splash density="port-hdpi" src="res/android/screen_hdpi_portrait.png" />
-    <splash density="port-ldpi" src="res/android/screen_ldpi_portrait.png" />
-    <splash density="port-mdpi" src="res/android/screen_mdpi_portrait.png" />
-    <splash density="port-xhdpi" src="res/android/screen_xhdpi_portrait.png" />
+    <icon density="ldpi" src="res/android/36mdpi.png" />
+    <icon density="mdpi" src="res/android/48mdpi.png" />
+    <icon density="hdpi" src="res/android/72hdpi.png" />
+    <icon density="xhdpi" src="res/android/96xhdpi.png" />
+    <icon density="xxhdpi" src="res/android/144xxhdpi.png" />
+    <icon density="xxxhdpi" src="res/android/192xxxhdpi.png" />
+    <splash density="port-mdpi" src="res/android/320x480mdpi.png" />
+    <splash density="port-hdpi" src="res/android/480x800hdpi.png" />
+    <splash density="port-xhdpi" src="res/android/720x1280xhdpi.png" />
+    <splash density="port-xxhdpi" src="res/android/960x1600xxhdpi.png" />
+    <splash density="port-xxxhdpi" src="res/android/1280x1920xxxhdpi.png" />
     <preference name="android-minSdkVersion" value="14" />
     <preference name="android-targetSdkVersion" value="22" />
     <preference name="android-installLocation" value="auto" />
