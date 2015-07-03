@@ -13,6 +13,7 @@ var downloading = false;
 var somethingWentWrong = false;
 
 function downReset() {
+	localStorage.setItem("isAllDownloaded", "n");
 	$("#downWrapID").show(); dataUrl;fileNameDirectory;
 	a = 1;
 	b = 0;
@@ -79,14 +80,13 @@ function downLang() {
 
 	if (lang == true) {
 		if (downloading == true) {
-			document.getElementById("downStop").innerHTML = "VSTOP";
+			document.getElementById("downStop").innerHTML = "dừng lại";
 		} else {
-			document.getElementById("downStop").innerHTML = "VSTART";
+			document.getElementById("downStop").innerHTML = "bắt đầu";
 		}
 		document.getElementById("downLang").innerHTML = "ENG";
-		document.getElementById("downHeader").innerHTML = "DOWNLOADING BIRD PICTURES PLEASE WAIT...";
-		document.getElementById("downHeader").innerHTML = "MAKE SURE YOUR WIFI IS ON, THE CONTENT IS AROUND 60MB.";
-		document.getElementById("downInfo").innerHTML = "KAMEHAMEHA";
+		document.getElementById("downHeader").innerHTML = "tải hình ảnh chim, xin vui lòng chờ đợi";
+		document.getElementById("downInfo").innerHTML = "đảm bảo wifi của bạn là trên, nội dung là khoảng 70mb";
 		lang = false;
 	} else if (lang == false) {
 		if (downloading == true) {
@@ -96,7 +96,7 @@ function downLang() {
 		}
 		document.getElementById("downLang").innerHTML = "VIET";
 		document.getElementById("downHeader").innerHTML = "DOWNLOADING BIRD PICTURES PLEASE WAIT...";
-		document.getElementById("downInfo").innerHTML = "MAKE SURE YOUR WIFI IS ON, THE CONTENT IS AROUND 60MB.";
+		document.getElementById("downInfo").innerHTML = "MAKE SURE YOUR WIFI IS ON, THE CONTENT IS AROUND 70MB.";
 		lang = true;
 	}
 }
