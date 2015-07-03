@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="de.birds.XuanThuy" version="0.1.3" versionCode="3" xmlns="http://www.w3.org/ns/widgets">
+<widget id="de.birds.XuanThuy" version="0.2.0" versionCode="4" xmlns="http://www.w3.org/ns/widgets">
     <preference name="loglevel" value="DEBUG" />
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />

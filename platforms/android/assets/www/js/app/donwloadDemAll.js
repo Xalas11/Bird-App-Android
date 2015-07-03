@@ -1,5 +1,5 @@
 // sahne am ende noch ma gucken!
-var downloadWebPage = "http://xuanthuy.lima-city.de/images/birds/";
+var downloadWebPage = "http://xalas11.github.io/XuanThuyBirdWebsite/images/birds/";
 var dataUrl;
 var fileNameDirectory;
 var a = 1;
