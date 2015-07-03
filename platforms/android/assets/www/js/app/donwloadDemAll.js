@@ -13,6 +13,9 @@ var downloading = false;
 var somethingWentWrong = false;
 
 function downReset() {
+	allDonwloaded = "nope";
+	$("#progress-bar").css("width", "0%");
+	$("#progressTEXT").html("0%");
 	$("#downWrapID").show(); dataUrl;fileNameDirectory;
 	a = 1;
 	b = 0;
@@ -22,13 +25,13 @@ function downReset() {
 	progressInfo = 98.5 / birdNameChange.length;
 	downloading = false;
 	somethingWentWrong = false;
+	console.log("hey ich kom ja doch hier an");
 	downDemAlll();
 }
 
 
 function checkConnection() {
     var networkState = navigator.connection.type;
-
     var states = {};
     states[Connection.UNKNOWN]  = 'exp';
     states[Connection.ETHERNET] = 'wifi';
@@ -48,8 +51,7 @@ function checkConnection() {
 		downDemAlll();
 	} else {
 		downDemAlll();
-	}
-    
+	} 
 }
 
 function downDemAlll() {
@@ -76,17 +78,15 @@ function downDemAlll() {
 }
 
 function downLang() {
-
 	if (lang == true) {
 		if (downloading == true) {
-			document.getElementById("downStop").innerHTML = "VSTOP";
+			document.getElementById("downStop").innerHTML = "dừng lại";
 		} else {
-			document.getElementById("downStop").innerHTML = "VSTART";
+			document.getElementById("downStop").innerHTML = "bắt đầu";
 		}
 		document.getElementById("downLang").innerHTML = "ENG";
-		document.getElementById("downHeader").innerHTML = "DOWNLOADING BIRD PICTURES PLEASE WAIT...";
-		document.getElementById("downHeader").innerHTML = "MAKE SURE YOUR WIFI IS ON, THE CONTENT IS AROUND 60MB.";
-		document.getElementById("downInfo").innerHTML = "KAMEHAMEHA";
+		document.getElementById("downHeader").innerHTML = "tải hình ảnh chim, xin vui lòng chờ đợi ...";
+		document.getElementById("downInfo").innerHTML = "đảm bảo wifi của bạn là trên, nội dung là khoảng 70mb";
 		lang = false;
 	} else if (lang == false) {
 		if (downloading == true) {
@@ -96,7 +96,7 @@ function downLang() {
 		}
 		document.getElementById("downLang").innerHTML = "VIET";
 		document.getElementById("downHeader").innerHTML = "DOWNLOADING BIRD PICTURES PLEASE WAIT...";
-		document.getElementById("downInfo").innerHTML = "MAKE SURE YOUR WIFI IS ON, THE CONTENT IS AROUND 60MB.";
+		document.getElementById("downInfo").innerHTML = "MAKE SURE YOUR WIFI IS ON, THE CONTENT IS AROUND 70MB.";
 		lang = true;
 	}
 }
@@ -162,9 +162,11 @@ function downDemAlllSchleife() {
 			}
 		} else {
 			if (somethingWentWrong == true) {
+				downloading = false;
 				alert("DOWNLOAD IS FINISHED BUT SOME IMAGES ARE MISSING, IN THE ABOUT MENU YOU CAN TRY IT AGAIN");
 				$("#downWrapID").hide();
 			} else {
+				downloading = false;
 				alert("ALL IMAGES ARE DOWNLOADED");
 				$("#downWrapID").hide();
 				allDonwloaded = "downloaded";

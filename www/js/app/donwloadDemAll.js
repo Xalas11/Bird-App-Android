@@ -13,7 +13,9 @@ var downloading = false;
 var somethingWentWrong = false;
 
 function downReset() {
-	localStorage.setItem("isAllDownloaded", "n");
+	allDonwloaded = "nope";
+	$("#progress-bar").css("width", "0%");
+	$("#progressTEXT").html("0%");
 	$("#downWrapID").show(); dataUrl;fileNameDirectory;
 	a = 1;
 	b = 0;
@@ -23,13 +25,13 @@ function downReset() {
 	progressInfo = 98.5 / birdNameChange.length;
 	downloading = false;
 	somethingWentWrong = false;
+	console.log("hey ich kom ja doch hier an");
 	downDemAlll();
 }
 
 
 function checkConnection() {
     var networkState = navigator.connection.type;
-
     var states = {};
     states[Connection.UNKNOWN]  = 'exp';
     states[Connection.ETHERNET] = 'wifi';
@@ -49,8 +51,7 @@ function checkConnection() {
 		downDemAlll();
 	} else {
 		downDemAlll();
-	}
-    
+	} 
 }
 
 function downDemAlll() {
@@ -77,7 +78,6 @@ function downDemAlll() {
 }
 
 function downLang() {
-
 	if (lang == true) {
 		if (downloading == true) {
 			document.getElementById("downStop").innerHTML = "dừng lại";
@@ -85,7 +85,7 @@ function downLang() {
 			document.getElementById("downStop").innerHTML = "bắt đầu";
 		}
 		document.getElementById("downLang").innerHTML = "ENG";
-		document.getElementById("downHeader").innerHTML = "tải hình ảnh chim, xin vui lòng chờ đợi";
+		document.getElementById("downHeader").innerHTML = "tải hình ảnh chim, xin vui lòng chờ đợi ...";
 		document.getElementById("downInfo").innerHTML = "đảm bảo wifi của bạn là trên, nội dung là khoảng 70mb";
 		lang = false;
 	} else if (lang == false) {
@@ -162,9 +162,11 @@ function downDemAlllSchleife() {
 			}
 		} else {
 			if (somethingWentWrong == true) {
+				downloading = false;
 				alert("DOWNLOAD IS FINISHED BUT SOME IMAGES ARE MISSING, IN THE ABOUT MENU YOU CAN TRY IT AGAIN");
 				$("#downWrapID").hide();
 			} else {
+				downloading = false;
 				alert("ALL IMAGES ARE DOWNLOADED");
 				$("#downWrapID").hide();
 				allDonwloaded = "downloaded";
