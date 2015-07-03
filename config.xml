@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns = "http://www.w3.org/ns/widgets"
 id = "de.birds.XuanThuy"
-version = "1.0.0"
-versionCode = "4">
+version = "1.0.1"
+versionCode = "5">
 
 	<name>Xuan Thuy Birds</name>
 	<description>Gibt ne ganze menge Vögel hier! Xuan Thuy</description>
