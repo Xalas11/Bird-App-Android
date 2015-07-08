@@ -161,8 +161,8 @@ var birdInformation = [{
 	"birdImgPath6" : "00",
 	"birdImgPath7" : "00",
 	"birdCopyRight" : {
-		"0" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
-		"1" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
+		"0" : "<a href='https://commons.wikimedia.org/wiki/User:Baresi_franco' target='_blank'>© Francis C. Franklin</a> <p class='aligRight'>" + CC4 + "</p>",
+		"1" : "<a href='https://www.flickr.com/people/69573851@N06' target='_blank'>© cuatrok77</a> <p class='aligRight'>All Rights Reserved</p>",
 		"2" : "<a href='http://justindequack.com/' target='_blank'>© Justin de Villeneuve</a> <p class='aligRight'>All Rights Reserved</p>",
 		"3" : "<a href='http://justindequack.com/' target='_blank'>© Justin de Villeneuve</a> <p class='aligRight'>All Rights Reserved</p>",
 	},
@@ -240,7 +240,7 @@ var birdInformation = [{
 		"0" : "© Unkown",
 		"1" : "<a href='http://ibc.lynxeds.com/users/erwinluesink' target='_blank'>© Erwin Luesink</a> <p class='aligRight'>All Rights Reserved</p>",
 		"2" : "© Unkown",
-		"3" : "<a href='www.naturespicsonline.com' target='_blank'>© Alan D. Wilson</a> <p class='aligRight'>" + CC25 + "</p>",
+		"3" : "<a href='http://www.naturespicsonline.com' target='_blank'>© Alan D. Wilson</a> <p class='aligRight'>" + CC25 + "</p>",
 	},
 	"birdTitel" : "Mallard",
 	"birdDescription" : "50-65 cm. Male: Greenish head with white collar, yellowish bill, purplish-brown breast, whitish belly. Female: Orange bill with dark markings, dark eyestripe, darking wing-coverts, dark blue secondaries, pale underwing.",
@@ -467,7 +467,7 @@ var birdInformation = [{
 	"birdCopyRight" : {
 		"0" : "<a href='https://www.flickr.com/photos/37804979@N00/' target='_blank'>© Tony Hisgett</a> <p class='aligRight'>" + CC2 + "</p>",
 		"1" : "<a href='http://www.iyufera.com/' target='_blank'>© Ignacio Yufera</a> <p class='aligRight'>All Rights Reserved</p>",
-		"2" : "<a href='danielpettersson.com' target='_blank'>© Daniel Pettersson</a> <p class='aligRight'>All Rights Reserved</p>",
+		"2" : "<a href='http://danielpettersson.com' target='_blank'>© Daniel Pettersson</a> <p class='aligRight'>All Rights Reserved</p>",
 		"3" : "<a href='http://www.girisholeti.com/' target='_blank'>© Saptagirish Oleti</a> <p class='aligRight'>All Rights Reserved</p>"
 	},
 	"birdTitel" : "Common Pochard",
@@ -620,7 +620,7 @@ var birdInformation = [{
 		"0" : "<a href='http://orientalbirdimages.org/search.php?Bird_ID=223&Bird_Image_ID=65146&p=3' target='_blank'>© Niranjan Sant</a> <p class='aligRight'>All Rights Reserved</p>",
 		"1" : "<a href='http://ibc.lynxeds.com/users/james-eaton' target='_blank'>© James Eaton</a> <p class='aligRight'>All Rights Reserved</p>",
 		"2" : "<a href='https://www.facebook.com/rungsrit.kanjanavanit' target='_blank'>© Rungsrit Kanjanavanit</a> <p class='aligRight'>All Rights Reserved</p>",
-		"3" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>"
+		"3" : "<a href='http://orientalbirdimages.org/photographers.php?action=birder&Birder_ID=511' target='_blank'>© Niranjan Sant</a> <p class='aligRight'>All Rights Reserved</p>"
 	},
 	"birdTitel" : "Yellow-legged Button Quail",
 	"birdDescription" : "16.5-18 cm. Yellow legs, deep buff breast-patch, round black spots upper flanks, mostly yellowish bill.",
@@ -658,7 +658,7 @@ var birdInformation = [{
 		"0" : "<a href='https://www.flickr.com/photos/61908493@N08/' target='_blank'>© Guy Poisson</a> <p class='aligRight'>All Rights Reserved</p>",
 		"1" : "© Birds World <p class='aligRight'>All Rights Reserved</p>",
 		"2" : "© Poisedforflights <p class='aligRight'>All Rights Reserved</p>",
-		"3" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>"
+		"3" : "© Unkown"
 	},
 	"birdTitel" : "Eurasian Wryneck",
 	"birdDescription" : "16-18 cm. Grey brown body with dark central stripe above, buffy white with dark bars below, strongly barred wings and tail. ",
@@ -1156,9 +1156,6 @@ var birdInformation = [{
 		"2" : "<a href='https://www.flickr.com/photos/challiyan/' target='_blank'>© Challiyil Eswaramangalath Vipin</a> <p class='aligRight'>" + CC2 + "</p>",
 		"3" : "<a href='http://commons.wikimedia.org/wiki/User:VasuVR/photos' target='_blank'>© VasuVR</a> <p class='aligRight'>All Rights Reserved</p>",
 		"4" : "© Subrato Sanyal <p class='aligRight'>All Rights Reserved</p>",
-		"5" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
-		"6" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
-		"7" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>"
 	},
 	"birdTitel" : "Asian Koel",
 	"birdDescription" : "40-44 cm. Male: Black body, greenish bill, red eye. Female: Mostly streaks, spotted and whitish barred.",
@@ -1421,8 +1418,8 @@ var birdInformation = [{
 	"birdImgPath6" : "00",
 	"birdImgPath7" : "00",
 	"birdCopyRight" : {
-		"0" : "<a href='www.girisholeti.com' target='_blank'>© Saptagirish Oleti</a> <p class='aligRight'>All Rights Reserved</p>",
-		"1" : "<a href='www.girisholeti.com' target='_blank'>© Saptagirish Oleti</a> <p class='aligRight'>All Rights Reserved</p>",
+		"0" : "<a href='http://www.girisholeti.com' target='_blank'>© Saptagirish Oleti</a> <p class='aligRight'>All Rights Reserved</p>",
+		"1" : "<a href='http://www.girisholeti.com' target='_blank'>© Saptagirish Oleti</a> <p class='aligRight'>All Rights Reserved</p>",
 		"2" : "<a href='http://carolinabirds.org/' target='_blank'>© Dick Daniels</a> <p class='aligRight'>" + CC3 + "</p>",
 		"3" : "© Jeremiah Blatz <p class='aligRight'>" + CC1 + "</p>",
 	},
@@ -1576,7 +1573,7 @@ var birdInformation = [{
 		"0" : "<a href='https://www.flickr.com/photos/avianphotos/' target='_blank'>© Gary Kinard</a> <p class='aligRight'>All Rights Reserved</p>",
 		"1" : "<a href='https://www.flickr.com/photos/11366385@N00/' target='_blank'>© Prashant Srivastava</a> <p class='aligRight'>All Rights Reserved</p>",
 		"2" : "© Unkown",
-		"3" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
+		"3" : "© Unkown",
 	},
 	"birdTitel" : "Ruddy-breasted Crake",
 	"birdDescription" : "21-26.5 cm. Adult: Reddish-chestnut below, brown above, whitish throat, whitish and blackish vent-bars, red legs. Juvenile: Dull legs, whitish below with brownish-grey bars.",
@@ -1687,7 +1684,7 @@ var birdInformation = [{
 	"birdImgPath6" : "00",
 	"birdImgPath7" : "00",
 	"birdCopyRight" : {
-		"0" : "<a href='www.girisholeti.com' target='_blank'>© Saptagirish Oleti</a> <p class='aligRight'>All Rights Reserved</p>",
+		"0" : "<a href='http://www.girisholeti.com' target='_blank'>© Saptagirish Oleti</a> <p class='aligRight'>All Rights Reserved</p>",
 		"1" : "<a href='http://birdsphotographer.com/?lang=en' target='_blank'>© Nikolay Staykov</a> <p class='aligRight'>All Rights Reserved</p>",
 		"2" : "© Unkown",
 		"3" : "© Delson Roche <p class='aligRight'>All Rights Reserved</p>",
@@ -1994,7 +1991,7 @@ var birdInformation = [{
 		"0" : "<a href='https://ayuwat.wordpress.com/' target='_blank'>© Ayuwat Jearwattanakanok</a> <p class='aligRight'>All Rights Reserved</p>",
 		"1" : "<a href='https://ayuwat.wordpress.com/' target='_blank'>© Ayuwat Jearwattanakanok</a> <p class='aligRight'>All Rights Reserved</p>",
 		"2" : "<a href='http://www.duadepaton.com/' target='_blank'>© Duade Paton</a> <p class='aligRight'>All Rights Reserved</p>",
-		"3" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
+		"3" : "© Unkown"
 	},
 	"birdTitel" : "Eastern Curlew",
 	"birdDescription" : "60-66 cm. Adult non-breeding: Large and longer bill than Eurasian Curlew, browner and buffier below, barred underwing when flight. Juvenile: More buffish-white markings above and on wing-coverts, finer dark streaks below, shorter bill.",
@@ -2905,7 +2902,7 @@ var birdInformation = [{
 	"birdImgPath7" : "00",
 	"birdCopyRight" : {
 		"0" : "© Nordfold <p class='aligRight'>All Rights Reserved</p>",
-		"1" : "<a href='www.hmnatuurfotografie.nl' target='_blank'>© Harold van der Meer</a> <p class='aligRight'>All Rights Reserved</p>",
+		"1" : "<a href='http://www.hmnatuurfotografie.nl' target='_blank'>© Harold van der Meer</a> <p class='aligRight'>All Rights Reserved</p>",
 		"2" : "<a href='https://www.flickr.com/photos/gidzy/' target='_blank'>© Gidzy</a> <p class='aligRight'>" + CC2 + "</p>",
 		"3" : "© Laszlo Hargitai <p class='aligRight'>All Rights Reserved</p>"
 	},
@@ -3512,14 +3509,10 @@ var birdInformation = [{
 	"birdImgPath6" : "00",
 	"birdImgPath7" : "00",
 	"birdCopyRight" : {
-		"0" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
-		"1" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
-		"2" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
-		"3" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
-		"4" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
-		"5" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
-		"6" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
-		"7" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>"
+		"0" : "© Nephentes <p class='aligRight'>" + CC3 + "</p>",
+		"1" : "<a href='http://orientalbirdimages.org/photographers.php?action=birder&Birder_ID=972' target='_blank'>© sunil singhal</a> <p class='aligRight'>All Rights Reserved</p>",
+		"2" : "<a href='http://orientalbirdimages.org/photographers.php?action=birder&Birder_ID=972' target='_blank'>© sunil singhal</a> <p class='aligRight'>All Rights Reserved</p>",
+		"3" : "<a href='http://orientalbirdimages.org/photographers.php?action=birder&Birder_ID=130' target='_blank'>© Nikhil Devasar</a> <p class='aligRight'>All Rights Reserved</p>"
 	},
 	"birdTitel" : "Pallas's Gull",
 	"birdDescription" : "58-67 cm. Adult non-breeding: Pale grey above, yellowish bill with blackish banded tip, streaks on mask, small black on outer primaries, yellowish legs, whitish below. Juvenile: Dark mask and hindcrown-streaking, densely dark mask lower hindneck and breast-sides, paler grey on mantle.",
@@ -3899,7 +3892,7 @@ var birdInformation = [{
 		"0" : "<a href='http://ibc.lynxeds.com/users/subramanyack' target='_blank'>© Subramanya_CK</a> <p class='aligRight'>All Rights Reserved</p>",
 		"1" : "© Unkown",
 		"2" : "© Unkown",
-		"3" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>"
+		"3" : "© Unkown"
 	},
 	"birdTitel" : "Western Marsh Harrier ",
 	"birdDescription" : "Descriptions: 48-56 cm. Male: Brown head, neck and breast, pale ear-coverts, rufous-chestnut lower underparts and thighs. Female: Dark eye-line and neck-side, no streaks on neck.",
@@ -4467,7 +4460,7 @@ var birdInformation = [{
 	"birdImgPath7" : "00",
 	"birdCopyRight" : {
 		"0" : "<a href='http://commons.wikimedia.org/wiki/User:Glen_Fergus' target='_blank'>© Glen Fergus</a> <p class='aligRight'>" + CC25 + "</p>",
-		"1" : "<a href='http://commons.wikimedia.org/wiki/User:Glen_Fergus' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
+		"1" : "<a href='http://commons.wikimedia.org/wiki/User:Glen_Fergus' target='_blank'>© Glen Fergus</a> <p class='aligRight'>All Rights Reserved</p>",
 		"2" : "© Folkert Hindriks <p class='aligRight'>All Rights Reserved</p>",
 		"3" : "© Folkert Hindriks <p class='aligRight'>All Rights Reserved</p>"
 	},
@@ -5687,10 +5680,6 @@ var birdInformation = [{
 		"1" : "<a href='https://commons.wikimedia.org/wiki/User:Alnus' target='_blank'>© Alnus</a> <p class='aligRight'>" + CC2 + "</p>",
 		"2" : "© Unkown",
 		"3" : "<a href='https://www.flickr.com/photos/46202369@N02/' target='_blank'>© Sijanto</a> <p class='aligRight'>All Rights Reserved</p>",
-		"4" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
-		"5" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
-		"6" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
-		"7" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>"
 	},
 	"birdTitel" : "Black-naped Monarch",
 	"birdDescription" : "16-17 cm. Male: Blue with whitish belly and vent, black nuchal tuft and breast-band. Female: Duller blue on head, greyish-brown above, no nuchal patch and breast-band, greyer breast.",
@@ -6106,7 +6095,7 @@ var birdInformation = [{
 	"birdImgPath7" : "00",
 	"birdCopyRight" : {
 		"0" : "<a href='https://www.flickr.com/photos/somchai2008' target='_blank'>© Somchai Kanchanasut</a> <p class='aligRight'>All Rights Reserved</p>",
-		"1" : "<a href='ifWebsite' target='_blank'>© Andy Ng</a> <p class='aligRight'>" + CC3 + "</p>",
+		"1" : "© Andy Ng <p class='aligRight'>" + CC3 + "</p>",
 		"2" : "© Zo Cozy <p class='aligRight'>All Rights Reserved</p>",
 		"3" : "<a href='https://www.flickr.com/photos/mantarey/' target='_blank'>© Rey Sta. Ana</a> <p class='aligRight'>All Rights Reserved</p>"
 	},
@@ -6337,10 +6326,6 @@ var birdInformation = [{
 		"1" : "<a href='http://travellingbirder.blogspot.com/' target='_blank'>© Mike Buckland</a> <p class='aligRight'>All Rights Reserved</p>",
 		"2" : "<a href='http://zootherabirding.blogspot.com/' target='_blank'>© Nick Bray</a> <p class='aligRight'>All Rights Reserved</p>",
 		"3" : "© Thomas Chan <p class='aligRight'>All Rights Reserved</p>",
-		"4" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
-		"5" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
-		"6" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
-		"7" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>"
 	},
 	"birdTitel" : "Hainan Blue Flycatcher",
 	"birdDescription" : "13.5-14 cm. Male: Blue upperparts, dark blue throat and breast, greyish-white belly. Female: Brown upperpart, throat and breast-side. Juvenile: Dark tips and buff streaks and spots above, dark-scaled breast.",
@@ -6458,9 +6443,9 @@ var birdInformation = [{
 	},
 	"birdTitel" : "Bluethroat",
 	"birdDescription" : "13.5-15 cm. Male none-breeding: Brown body with scaly blue, black and rufous-red breast, white supercilium, whitish belly, rufous at tail-base. Female: Whitish throat, blackish malar stripe and gorget.",
-	"birdHabitat" : "NAME",
-	"birdObservation" : "NAME",
-	"birdConversation" : "NAME",
+	"birdHabitat" : "Mangroves, plantation, casuarina forest.",
+	"birdObservation" : "Mangroves, casuarina forest at Lu islet from September to November and March to April.",
+	"birdConversation" : "None, uncommon passage migrant.",
 	"birdTitelViet" : "OANH CỔ XANH",
 	"birdDescriptionViet" : "13.5-15 cm. Gốc các lông phía ngoài hung. Lông mày trắng. Chim đực trong mùa sinh sản: trước ngực và họng màu hung và xanh. Chim cái: họng có đốm nâu sẫm và trắng. Tiếng kêu: ‘chích’ lập đi lập lại nhiều lần.",
 	"birdHabitatViet" : "Rừng ngập mặn, rừng phi lao và khu vực trồng trọt.",
@@ -6873,10 +6858,6 @@ var birdInformation = [{
 		"1" : "© Melvin Yap <p class='aligRight'>" + CC3 + "</p>",
 		"2" : "<a href='https://www.flickr.com/photos/zingbean/' target='_blank'>© Zingbean</a> <p class='aligRight'>All Rights Reserved</p>",
 		"3" : "© Andrew Hardacre <p class='aligRight'>" + CC2 + "</p>",
-		"4" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
-		"5" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
-		"6" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>",
-		"7" : "<a href='ifWebsite' target='_blank'>© NAME</a> <p class='aligRight'>All Rights Reserved</p>"
 	},
 	"birdTitel" : "Light-vented Bulbul",
 	"birdDescription" : "18-19 cm. Adult: Greenish upperparts, whitish throat, greyish breast, whitish ear-patch. Juvenile: Paler, greyish-brown head, faint breast-band.",
@@ -8156,4 +8137,3 @@ var birdInformation = [{
 	"november" : "1",
 	"december" : "1",
 }];
-
